@@ -1,0 +1,1432 @@
+2025-12-24 16:05:53,554 [INFO] jet_app - === JET Streamlit app logging initialized ===
+2025-12-24 16:05:53,556 [INFO] jet_app - Log file: jet_app.log
+2025-12-24 16:17:29,597 [INFO] jet_app - === JET Streamlit app logging initialized ===
+2025-12-24 16:17:29,597 [INFO] jet_app - Log file: jet_app.log
+2025-12-24 16:18:30,539 [INFO] jet_app - [UI] JET run requested (file=(테스트1) 2-4. 2024년 별도 분개장.csv, size=49729543 bytes, person_names=['메디콕스', '우리은행', '천안시청'])
+2025-12-24 16:18:30,555 [INFO] jet_app - [UI] Step 1: load_csv_to_sqlite 시작
+2025-12-24 16:18:30,555 [INFO] jet_app.jet_core - [load_csv_to_sqlite] start (encoding=utf-8-sig)
+2025-12-24 16:18:31,703 [INFO] jet_app.jet_core - [load_csv_to_sqlite] CSV loaded: rows=235344, cols=18, columns=['회계연도', '전기일', '확정번호', '전표번호', '전표라인번호', '계정코드', '계정명', '차변', '대변', '차대변지시자', '현지통화금액', '라인적요', '공정', '공정명', '사용자', '사용자명', '거래처', '거래처명']
+2025-12-24 16:18:32,855 [INFO] jet_app.jet_core - [load_csv_to_sqlite] success: in-memory DB created, table=journal_entries, rows=235344
+2025-12-24 16:18:32,874 [INFO] jet_app - [UI] Step 1 완료: rows=235344, cols=18, missing_required=[], errors=[]
+2025-12-24 16:18:32,968 [INFO] jet_app.jet_core - [derive_years_from_db] detected years: raw=[2024, 2023] -> range=[2023, 2024]
+2025-12-24 16:18:32,968 [INFO] jet_app - [UI] Step 5: run_jet_tests 시작 (years=[2023, 2024], person_names=['메디콕스', '우리은행', '천안시청'], min_amount=1000000000)
+2025-12-24 16:18:32,968 [INFO] jet_app.jet_core - [run_jet_tests] start (years=[2023, 2024], person_names=['메디콕스', '우리은행', '천안시청'], person_birthdates=None, min_amount=1000000000)
+2025-12-24 16:18:32,968 [INFO] jet_app.jet_core - [run_jet_tests] processing year=2023
+2025-12-24 16:18:32,968 [INFO] jet_app.jet_core - [create_korean_holiday_table] building holiday table for year=2023 -> holiday_2023
+2025-12-24 16:18:33,718 [INFO] jet_app.jet_core - [create_korean_holiday_table] table=holiday_2023 created (rows=118)
+2025-12-24 16:18:33,718 [INFO] jet_app.jet_core - [run_jet_tests] building debug info for year=2023 (prefix=[2023] )
+2025-12-24 16:18:33,796 [INFO] jet_app.jet_core - [get_jet_queries] preparing queries for year=2023, holiday_table=holiday_2023, person_names=['메디콕스', '우리은행', '천안시청'], min_amount=1000000000
+2025-12-24 16:18:33,812 [INFO] jet_app.jet_core - [get_jet_queries] 11 queries prepared
+2025-12-24 16:18:33,812 [INFO] jet_app.jet_core - [run_jet_tests] running query '① 분기말_휴일_지정금액이상_분개' (year=2023)
+2025-12-24 16:18:33,890 [INFO] jet_app.jet_core - [run_jet_tests] running query '② 적요_조정_포함' (year=2023)
+2025-12-24 16:18:33,983 [INFO] jet_app.jet_core - [run_jet_tests] running query '③ 분기말_수정_적요' (year=2023)
+2025-12-24 16:18:34,046 [INFO] jet_app.jet_core - [run_jet_tests] running query '④ 대차불일치_전표세트' (year=2023)
+2025-12-24 16:18:34,187 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑤ 누락된_전표번호' (year=2023)
+2025-12-24 16:18:34,280 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑥ 계정별_3회이하' (year=2023)
+2025-12-24 16:18:34,546 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑦ 사용자별_3회이하' (year=2023)
+2025-12-24 16:18:34,749 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑧ 거래처별_3회이하' (year=2023)
+2025-12-24 16:18:35,265 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑨ 금액_만원단위_0000' (year=2023)
+2025-12-24 16:18:35,499 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑩ 주요인물_거래처명_매칭' (year=2023)
+2025-12-24 16:18:35,593 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑪ 마이너스_금액_분개' (year=2023)
+2025-12-24 16:18:35,655 [INFO] jet_app.jet_core - [run_jet_tests] processing year=2024
+2025-12-24 16:18:35,671 [INFO] jet_app.jet_core - [create_korean_holiday_table] building holiday table for year=2024 -> holiday_2024
+2025-12-24 16:18:35,671 [INFO] jet_app.jet_core - [create_korean_holiday_table] table=holiday_2024 created (rows=120)
+2025-12-24 16:18:35,671 [INFO] jet_app.jet_core - [run_jet_tests] building debug info for year=2024 (prefix=[2024] )
+2025-12-24 16:18:35,749 [INFO] jet_app.jet_core - [get_jet_queries] preparing queries for year=2024, holiday_table=holiday_2024, person_names=['메디콕스', '우리은행', '천안시청'], min_amount=1000000000
+2025-12-24 16:18:35,765 [INFO] jet_app.jet_core - [get_jet_queries] 11 queries prepared
+2025-12-24 16:18:35,765 [INFO] jet_app.jet_core - [run_jet_tests] running query '① 분기말_휴일_지정금액이상_분개' (year=2024)
+2025-12-24 16:18:35,827 [INFO] jet_app.jet_core - [run_jet_tests] running query '② 적요_조정_포함' (year=2024)
+2025-12-24 16:18:35,890 [INFO] jet_app.jet_core - [run_jet_tests] running query '③ 분기말_수정_적요' (year=2024)
+2025-12-24 16:18:35,968 [INFO] jet_app.jet_core - [run_jet_tests] running query '④ 대차불일치_전표세트' (year=2024)
+2025-12-24 16:18:36,093 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑤ 누락된_전표번호' (year=2024)
+2025-12-24 16:18:36,171 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑥ 계정별_3회이하' (year=2024)
+2025-12-24 16:18:36,405 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑦ 사용자별_3회이하' (year=2024)
+2025-12-24 16:18:36,624 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑧ 거래처별_3회이하' (year=2024)
+2025-12-24 16:18:37,062 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑨ 금액_만원단위_0000' (year=2024)
+2025-12-24 16:18:37,327 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑩ 주요인물_거래처명_매칭' (year=2024)
+2025-12-24 16:18:37,421 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑪ 마이너스_금액_분개' (year=2024)
+2025-12-24 16:18:37,546 [INFO] jet_app.jet_core - [run_jet_tests] all queries finished (count=11)
+2025-12-24 16:18:37,562 [INFO] jet_app - [UI] Step 5 완료: result_sets=11
+2025-12-24 16:19:04,737 [INFO] jet_app - [UI] JET run finished (file=(테스트1) 2-4. 2024년 별도 분개장.csv)
+2025-12-24 16:19:04,743 [INFO] jet_app - [render_results] rendering results for years=[2023, 2024] (result_sets=11)
+2025-12-24 16:35:39,337 [INFO] jet_app - [UI] JET run requested (file=(테스트1) 2-4. 2024년 별도 분개장.csv, size=24864883 bytes, person_names=[])
+2025-12-24 16:35:39,353 [INFO] jet_app - [UI] Step 1: load_csv_to_sqlite 시작
+2025-12-24 16:35:39,353 [INFO] jet_app.jet_core - [load_csv_to_sqlite] start (encoding=utf-8-sig)
+2025-12-24 16:35:39,822 [INFO] jet_app.jet_core - [load_csv_to_sqlite] CSV loaded: rows=117672, cols=18, columns=['회계연도', '전기일', '확정번호', '전표번호', '전표라인번호', '계정코드', '계정명', '차변', '대변', '차대변지시자', '현지통화금액', '라인적요', '공정', '공정명', '사용자', '사용자명', '거래처', '거래처명']
+2025-12-24 16:35:40,411 [INFO] jet_app.jet_core - [load_csv_to_sqlite] success: in-memory DB created, table=journal_entries, rows=117672
+2025-12-24 16:35:40,443 [INFO] jet_app - [UI] Step 1 완료: rows=117672, cols=18, missing_required=[], errors=[]
+2025-12-24 16:35:40,474 [INFO] jet_app.jet_core - [derive_years_from_db] detected years: raw=[2024] -> range=[2024]
+2025-12-24 16:35:40,474 [INFO] jet_app - [UI] Step 5: run_jet_tests 시작 (years=[2024], person_names=[], min_amount=1000000000)
+2025-12-24 16:35:40,474 [INFO] jet_app.jet_core - [run_jet_tests] start (years=[2024], person_names=None, person_birthdates=None, min_amount=1000000000)
+2025-12-24 16:35:40,474 [INFO] jet_app.jet_core - [run_jet_tests] processing year=2024
+2025-12-24 16:35:40,474 [INFO] jet_app.jet_core - [create_korean_holiday_table] building holiday table for year=2024 -> holiday_2024
+2025-12-24 16:35:40,490 [INFO] jet_app.jet_core - [create_korean_holiday_table] table=holiday_2024 created (rows=120)
+2025-12-24 16:35:40,490 [INFO] jet_app.jet_core - [run_jet_tests] building debug info for year=2024 (prefix=[2024] )
+2025-12-24 16:35:40,536 [INFO] jet_app.jet_core - [get_jet_queries] preparing queries for year=2024, holiday_table=holiday_2024, person_names=None, min_amount=1000000000
+2025-12-24 16:35:40,536 [INFO] jet_app.jet_core - [get_jet_queries] 11 queries prepared
+2025-12-24 16:35:40,536 [INFO] jet_app.jet_core - [run_jet_tests] running query '① 분기말_휴일_지정금액이상_분개' (year=2024)
+2025-12-24 16:35:40,582 [INFO] jet_app.jet_core - [run_jet_tests] running query '② 적요_조정_포함' (year=2024)
+2025-12-24 16:35:40,629 [INFO] jet_app.jet_core - [run_jet_tests] running query '③ 분기말_수정_적요' (year=2024)
+2025-12-24 16:35:40,660 [INFO] jet_app.jet_core - [run_jet_tests] running query '④ 대차불일치_전표세트' (year=2024)
+2025-12-24 16:35:40,739 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑤ 누락된_전표번호' (year=2024)
+2025-12-24 16:35:40,785 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑥ 계정별_3회이하' (year=2024)
+2025-12-24 16:35:40,879 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑦ 사용자별_3회이하' (year=2024)
+2025-12-24 16:35:41,004 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑧ 거래처별_3회이하' (year=2024)
+2025-12-24 16:35:41,223 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑨ 금액_만원단위_0000' (year=2024)
+2025-12-24 16:35:41,332 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑩ 주요인물_거래처명_매칭' (year=2024)
+2025-12-24 16:35:41,332 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑪ 마이너스_금액_분개' (year=2024)
+2025-12-24 16:35:41,379 [INFO] jet_app.jet_core - [run_jet_tests] all queries finished (count=11)
+2025-12-24 16:35:41,379 [INFO] jet_app - [UI] Step 5 완료: result_sets=11
+2025-12-24 16:35:48,082 [INFO] jet_app - [UI] ④번 전표번호별 상세 데이터 준비 중...
+2025-12-24 16:35:48,129 [INFO] jet_app - [UI] ④번 전표번호별 상세 데이터 준비 완료: 2개
+2025-12-24 16:35:48,191 [INFO] jet_app - [UI] JET run finished (file=(테스트1) 2-4. 2024년 별도 분개장.csv)
+2025-12-24 16:35:48,191 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2025-12-24 16:36:09,362 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2025-12-24 16:36:17,505 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2025-12-24 17:05:29,697 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2025-12-24 17:05:35,713 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2025-12-24 17:05:39,991 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2025-12-24 17:36:03,729 [INFO] jet_app - [UI] JET run requested (file=(테스트1) 2-4. 2024년 별도 분개장.csv, size=24864883 bytes, person_names=['메디콕스', '싸이토젠', '팍스코', '소니드에이아이'])
+2025-12-24 17:36:03,729 [INFO] jet_app - [UI] Step 1: load_csv_to_sqlite 시작
+2025-12-24 17:36:03,729 [INFO] jet_app.jet_core - [load_csv_to_sqlite] start (encoding=utf-8-sig)
+2025-12-24 17:36:04,198 [INFO] jet_app.jet_core - [load_csv_to_sqlite] CSV loaded: rows=117672, cols=18, columns=['회계연도', '전기일', '확정번호', '전표번호', '전표라인번호', '계정코드', '계정명', '차변', '대변', '차대변지시자', '현지통화금액', '라인적요', '공정', '공정명', '사용자', '사용자명', '거래처', '거래처명']
+2025-12-24 17:36:04,799 [INFO] jet_app.jet_core - [load_csv_to_sqlite] success: in-memory DB created, table=journal_entries, rows=117672
+2025-12-24 17:36:04,814 [INFO] jet_app - [UI] Step 1 완료: rows=117672, cols=18, missing_required=[], errors=[]
+2025-12-24 17:36:04,846 [INFO] jet_app.jet_core - [derive_years_from_db] detected years: raw=[2024] -> range=[2024]
+2025-12-24 17:36:04,846 [INFO] jet_app - [UI] Step 5: run_jet_tests 시작 (years=[2024], person_names=['메디콕스', '싸이토젠', '팍스코', '소니드에이아이'], min_amount=1000000000)
+2025-12-24 17:36:04,846 [INFO] jet_app.jet_core - [run_jet_tests] start (years=[2024], person_names=['메디콕스', '싸이토젠', '팍스코', '소니드에이아이'], person_birthdates=None, min_amount=1000000000)
+2025-12-24 17:36:04,846 [INFO] jet_app.jet_core - [run_jet_tests] processing year=2024
+2025-12-24 17:36:04,861 [INFO] jet_app.jet_core - [create_korean_holiday_table] building holiday table for year=2024 -> holiday_2024
+2025-12-24 17:36:04,861 [INFO] jet_app.jet_core - [create_korean_holiday_table] table=holiday_2024 created (rows=120)
+2025-12-24 17:36:04,861 [INFO] jet_app.jet_core - [run_jet_tests] building debug info for year=2024 (prefix=[2024] )
+2025-12-24 17:36:04,892 [INFO] jet_app.jet_core - [get_jet_queries] preparing queries for year=2024, holiday_table=holiday_2024, person_names=['메디콕스', '싸이토젠', '팍스코', '소니드에이아이'], min_amount=1000000000
+2025-12-24 17:36:04,908 [INFO] jet_app.jet_core - [get_jet_queries] 11 queries prepared
+2025-12-24 17:36:04,908 [INFO] jet_app.jet_core - [run_jet_tests] running query '① 분기말_휴일_지정금액이상_분개' (year=2024)
+2025-12-24 17:36:04,955 [INFO] jet_app.jet_core - [run_jet_tests] running query '② 적요_조정_포함' (year=2024)
+2025-12-24 17:36:04,986 [INFO] jet_app.jet_core - [run_jet_tests] running query '③ 분기말_수정_적요' (year=2024)
+2025-12-24 17:36:05,033 [INFO] jet_app.jet_core - [run_jet_tests] running query '④ 대차불일치_전표세트' (year=2024)
+2025-12-24 17:36:05,096 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑤ 누락된_전표번호' (year=2024)
+2025-12-24 17:36:05,127 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑥ 계정별_3회이하' (year=2024)
+2025-12-24 17:36:05,267 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑦ 사용자별_3회이하' (year=2024)
+2025-12-24 17:36:05,408 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑧ 거래처별_3회이하' (year=2024)
+2025-12-24 17:36:05,644 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑨ 금액_만원단위_0000' (year=2024)
+2025-12-24 17:36:05,753 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑩ 주요인물_거래처명_매칭' (year=2024)
+2025-12-24 17:36:05,800 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑪ 마이너스_금액_분개' (year=2024)
+2025-12-24 17:36:05,847 [INFO] jet_app.jet_core - [run_jet_tests] all queries finished (count=11)
+2025-12-24 17:36:05,847 [INFO] jet_app - [UI] Step 5 완료: result_sets=11
+2025-12-24 17:36:12,910 [INFO] jet_app - [UI] ④번 전표번호별 상세 데이터 준비 중...
+2025-12-24 17:36:12,957 [INFO] jet_app - [UI] ④번 전표번호별 상세 데이터 준비 완료: 2개
+2025-12-24 17:36:13,035 [INFO] jet_app - [UI] JET run finished (file=(테스트1) 2-4. 2024년 별도 분개장.csv)
+2025-12-24 17:36:13,050 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2025-12-24 17:40:39,494 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2025-12-24 17:40:44,845 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2025-12-24 17:40:45,851 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2025-12-24 17:40:46,741 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2025-12-24 17:40:48,518 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2025-12-24 17:40:48,972 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2025-12-24 17:40:54,136 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2025-12-24 17:40:55,294 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2025-12-24 17:42:05,096 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2025-12-24 17:42:05,518 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2025-12-24 17:42:06,229 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2025-12-24 17:42:06,666 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2025-12-24 17:42:07,227 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2025-12-24 17:42:07,774 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2025-12-24 17:42:08,222 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2025-12-24 17:42:09,502 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2025-12-24 17:42:10,051 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2025-12-24 17:42:10,608 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2025-12-24 17:42:12,164 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2025-12-24 17:42:23,142 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2025-12-24 17:42:24,327 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2025-12-24 17:42:25,093 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2025-12-29 13:16:23,663 [INFO] jet_app - [UI] JET run requested (file=(테스트1) 2-4. 2024년 별도 분개장.csv, size=24864883 bytes, person_names=['메디콕스', '싸이토젠', '팍스코'])
+2025-12-29 13:16:23,663 [INFO] jet_app - [UI] Step 1: load_csv_to_sqlite 시작
+2025-12-29 13:16:23,663 [INFO] jet_app.jet_core - [load_csv_to_sqlite] start (encoding=utf-8-sig)
+2025-12-29 13:16:24,108 [INFO] jet_app.jet_core - [load_csv_to_sqlite] CSV loaded: rows=117672, cols=18, columns=['회계연도', '전기일', '확정번호', '전표번호', '전표라인번호', '계정코드', '계정명', '차변', '대변', '차대변지시자', '현지통화금액', '라인적요', '공정', '공정명', '사용자', '사용자명', '거래처', '거래처명']
+2025-12-29 13:16:24,700 [INFO] jet_app.jet_core - [load_csv_to_sqlite] success: in-memory DB created, table=journal_entries, rows=117672
+2025-12-29 13:16:24,731 [INFO] jet_app - [UI] Step 1 완료: rows=117672, cols=18, missing_required=[], errors=[]
+2025-12-29 13:16:24,762 [INFO] jet_app.jet_core - [derive_years_from_db] detected years: raw=[2024] -> range=[2024]
+2025-12-29 13:16:24,762 [INFO] jet_app - [UI] Step 5: run_jet_tests 시작 (years=[2024], person_names=['메디콕스', '싸이토젠', '팍스코'], min_amount=1000000000)
+2025-12-29 13:16:24,762 [INFO] jet_app.jet_core - [run_jet_tests] start (years=[2024], person_names=['메디콕스', '싸이토젠', '팍스코'], person_birthdates=None, min_amount=1000000000)
+2025-12-29 13:16:24,762 [INFO] jet_app.jet_core - [run_jet_tests] processing year=2024
+2025-12-29 13:16:24,762 [INFO] jet_app.jet_core - [create_korean_holiday_table] building holiday table for year=2024 -> holiday_2024
+2025-12-29 13:16:24,778 [INFO] jet_app.jet_core - [create_korean_holiday_table] table=holiday_2024 created (rows=120)
+2025-12-29 13:16:24,778 [INFO] jet_app.jet_core - [run_jet_tests] building debug info for year=2024 (prefix=[2024] )
+2025-12-29 13:16:24,809 [INFO] jet_app.jet_core - [get_jet_queries] preparing queries for year=2024, holiday_table=holiday_2024, person_names=['메디콕스', '싸이토젠', '팍스코'], min_amount=1000000000
+2025-12-29 13:16:24,809 [INFO] jet_app.jet_core - [get_jet_queries] 11 queries prepared
+2025-12-29 13:16:24,809 [INFO] jet_app.jet_core - [run_jet_tests] running query '① 분기말_휴일_지정금액이상_분개' (year=2024)
+2025-12-29 13:16:24,856 [INFO] jet_app.jet_core - [run_jet_tests] running query '② 적요_조정_포함' (year=2024)
+2025-12-29 13:16:24,903 [INFO] jet_app.jet_core - [run_jet_tests] running query '③ 분기말_수정_적요' (year=2024)
+2025-12-29 13:16:24,934 [INFO] jet_app.jet_core - [run_jet_tests] running query '④ 대차불일치_전표세트' (year=2024)
+2025-12-29 13:16:25,012 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑤ 누락된_전표번호' (year=2024)
+2025-12-29 13:16:25,043 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑥ 계정별_3회이하' (year=2024)
+2025-12-29 13:16:25,144 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑦ 사용자별_3회이하' (year=2024)
+2025-12-29 13:16:25,248 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑧ 거래처별_3회이하' (year=2024)
+2025-12-29 13:16:25,529 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑨ 금액_만원단위_0000' (year=2024)
+2025-12-29 13:16:25,639 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑩ 주요인물_거래처명_매칭' (year=2024)
+2025-12-29 13:16:25,701 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑪ 마이너스_금액_분개' (year=2024)
+2025-12-29 13:16:25,748 [INFO] jet_app.jet_core - [run_jet_tests] all queries finished (count=11)
+2025-12-29 13:16:25,748 [INFO] jet_app - [UI] Step 5 완료: result_sets=11
+2025-12-29 13:16:32,989 [INFO] jet_app - [UI] ④번 전표번호별 상세 데이터 준비 중...
+2025-12-29 13:16:33,036 [INFO] jet_app - [UI] ④번 전표번호별 상세 데이터 준비 완료: 2개
+2025-12-29 13:16:33,114 [INFO] jet_app - [UI] JET run finished (file=(테스트1) 2-4. 2024년 별도 분개장.csv)
+2025-12-29 13:16:33,114 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2025-12-29 13:16:50,093 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2025-12-29 13:16:54,174 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2025-12-29 13:17:05,503 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2025-12-29 13:17:05,683 [INFO] jet_app - [UI] JET run requested (file=(테스트1) 2-4. 2024년 별도 분개장.csv, size=24864883 bytes, person_names=['메디콕스', '싸이토젠', '팍스코'])
+2025-12-29 13:17:05,698 [INFO] jet_app - [UI] Step 1: load_csv_to_sqlite 시작
+2025-12-29 13:17:05,698 [INFO] jet_app.jet_core - [load_csv_to_sqlite] start (encoding=utf-8-sig)
+2025-12-29 13:17:06,252 [INFO] jet_app.jet_core - [load_csv_to_sqlite] CSV loaded: rows=117672, cols=18, columns=['회계연도', '전기일', '확정번호', '전표번호', '전표라인번호', '계정코드', '계정명', '차변', '대변', '차대변지시자', '현지통화금액', '라인적요', '공정', '공정명', '사용자', '사용자명', '거래처', '거래처명']
+2025-12-29 13:17:06,816 [INFO] jet_app.jet_core - [load_csv_to_sqlite] success: in-memory DB created, table=journal_entries, rows=117672
+2025-12-29 13:17:06,832 [INFO] jet_app - [UI] Step 1 완료: rows=117672, cols=18, missing_required=[], errors=[]
+2025-12-29 13:17:06,879 [INFO] jet_app.jet_core - [derive_years_from_db] detected years: raw=[2024] -> range=[2024]
+2025-12-29 13:17:06,879 [INFO] jet_app - [UI] Step 5: run_jet_tests 시작 (years=[2024], person_names=['메디콕스', '싸이토젠', '팍스코'], min_amount=5000000000)
+2025-12-29 13:17:06,879 [INFO] jet_app.jet_core - [run_jet_tests] start (years=[2024], person_names=['메디콕스', '싸이토젠', '팍스코'], person_birthdates=None, min_amount=5000000000)
+2025-12-29 13:17:06,894 [INFO] jet_app.jet_core - [run_jet_tests] processing year=2024
+2025-12-29 13:17:06,894 [INFO] jet_app.jet_core - [create_korean_holiday_table] building holiday table for year=2024 -> holiday_2024
+2025-12-29 13:17:06,894 [INFO] jet_app.jet_core - [create_korean_holiday_table] table=holiday_2024 created (rows=120)
+2025-12-29 13:17:06,894 [INFO] jet_app.jet_core - [run_jet_tests] building debug info for year=2024 (prefix=[2024] )
+2025-12-29 13:17:06,941 [INFO] jet_app.jet_core - [get_jet_queries] preparing queries for year=2024, holiday_table=holiday_2024, person_names=['메디콕스', '싸이토젠', '팍스코'], min_amount=5000000000
+2025-12-29 13:17:06,941 [INFO] jet_app.jet_core - [get_jet_queries] 11 queries prepared
+2025-12-29 13:17:06,941 [INFO] jet_app.jet_core - [run_jet_tests] running query '① 분기말_휴일_지정금액이상_분개' (year=2024)
+2025-12-29 13:17:06,988 [INFO] jet_app.jet_core - [run_jet_tests] running query '② 적요_조정_포함' (year=2024)
+2025-12-29 13:17:07,030 [INFO] jet_app.jet_core - [run_jet_tests] running query '③ 분기말_수정_적요' (year=2024)
+2025-12-29 13:17:07,077 [INFO] jet_app.jet_core - [run_jet_tests] running query '④ 대차불일치_전표세트' (year=2024)
+2025-12-29 13:17:07,156 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑤ 누락된_전표번호' (year=2024)
+2025-12-29 13:17:07,202 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑥ 계정별_3회이하' (year=2024)
+2025-12-29 13:17:07,296 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑦ 사용자별_3회이하' (year=2024)
+2025-12-29 13:17:07,427 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑧ 거래처별_3회이하' (year=2024)
+2025-12-29 13:17:07,662 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑨ 금액_만원단위_0000' (year=2024)
+2025-12-29 13:17:07,779 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑩ 주요인물_거래처명_매칭' (year=2024)
+2025-12-29 13:17:07,818 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑪ 마이너스_금액_분개' (year=2024)
+2025-12-29 13:17:07,876 [INFO] jet_app.jet_core - [run_jet_tests] all queries finished (count=11)
+2025-12-29 13:17:07,876 [INFO] jet_app - [UI] Step 5 완료: result_sets=11
+2025-12-29 13:17:15,325 [INFO] jet_app - [UI] ④번 전표번호별 상세 데이터 준비 중...
+2025-12-29 13:17:15,372 [INFO] jet_app - [UI] ④번 전표번호별 상세 데이터 준비 완료: 2개
+2025-12-29 13:17:15,459 [INFO] jet_app - [UI] JET run finished (file=(테스트1) 2-4. 2024년 별도 분개장.csv)
+2025-12-29 13:17:15,475 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2025-12-30 09:22:43,906 [INFO] jet_app - === JET Streamlit app logging initialized ===
+2025-12-30 09:22:43,906 [INFO] jet_app - Log file: jet_app.log
+2026-01-02 16:56:58,085 [INFO] jet_app - [UI] JET run requested (file=(테스트1) 2-4. 2024년 별도 분개장.csv, size=21475392 bytes, person_names=['팍스코', 'BBBB'])
+2026-01-02 16:56:58,085 [INFO] jet_app - [UI] Step 1: load_csv_to_sqlite 시작
+2026-01-02 16:56:58,085 [INFO] jet_app.jet_core - [load_csv_to_sqlite] start (encoding=utf-8-sig)
+2026-01-02 16:56:58,101 [ERROR] jet_app - [UI] 처리 중 예외 발생
+Traceback (most recent call last):
+  File "D:\jet_project\streamlit_app.py", line 471, in <module>
+    conn, summary = load_csv_to_sqlite(
+                    ^^^^^^^^^^^^^^^^^^^
+  File "D:\jet_project\jet_core.py", line 71, in load_csv_to_sqlite
+    df = pd.read_csv(file_obj, encoding=encoding, low_memory=False)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FA\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FA\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FA\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FA\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\io\parsers\readers.py", line 1898, in _make_engine
+    return mapping[engine](f, **self.options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FA\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py", line 93, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/parsers.pyx", line 574, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 663, in pandas._libs.parsers.TextReader._get_header
+  File "pandas/_libs/parsers.pyx", line 874, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 891, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "pandas/_libs/parsers.pyx", line 2053, in pandas._libs.parsers.raise_parser_error
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x9b in position 0: invalid start byte
+2026-01-02 16:56:58,147 [INFO] jet_app - [UI] JET run finished (file=(테스트1) 2-4. 2024년 별도 분개장.csv)
+2026-01-02 16:58:59,302 [INFO] jet_app - [UI] JET run requested (file=(테스트1) 2-4. 2024년 별도 분개장.csv, size=24855568 bytes, person_names=['팍스코', 'BBBB'])
+2026-01-02 16:58:59,317 [INFO] jet_app - [UI] Step 1: load_csv_to_sqlite 시작
+2026-01-02 16:58:59,317 [INFO] jet_app.jet_core - [load_csv_to_sqlite] start (encoding=utf-8-sig)
+2026-01-02 16:58:59,317 [ERROR] jet_app - [UI] 처리 중 예외 발생
+Traceback (most recent call last):
+  File "D:\jet_project\streamlit_app.py", line 471, in <module>
+    conn, summary = load_csv_to_sqlite(
+                    ^^^^^^^^^^^^^^^^^^^
+  File "D:\jet_project\jet_core.py", line 71, in load_csv_to_sqlite
+    df = pd.read_csv(file_obj, encoding=encoding, low_memory=False)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FA\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FA\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FA\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FA\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\io\parsers\readers.py", line 1898, in _make_engine
+    return mapping[engine](f, **self.options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FA\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py", line 93, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/parsers.pyx", line 574, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 663, in pandas._libs.parsers.TextReader._get_header
+  File "pandas/_libs/parsers.pyx", line 874, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 891, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "pandas/_libs/parsers.pyx", line 2053, in pandas._libs.parsers.raise_parser_error
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x9b in position 0: invalid start byte
+2026-01-02 16:58:59,364 [INFO] jet_app - [UI] JET run finished (file=(테스트1) 2-4. 2024년 별도 분개장.csv)
+2026-01-02 16:59:54,034 [INFO] jet_app - [UI] JET run requested (file=(테스트1) 2-4. 2024년 별도 분개장.csv, size=24855568 bytes, person_names=['팍스코', 'BBBB'])
+2026-01-02 16:59:54,034 [INFO] jet_app - [UI] Step 1: load_csv_to_sqlite 시작
+2026-01-02 16:59:54,034 [INFO] jet_app.jet_core - [load_csv_to_sqlite] start (encoding=utf-8-sig)
+2026-01-02 16:59:54,034 [ERROR] jet_app - [UI] 처리 중 예외 발생
+Traceback (most recent call last):
+  File "D:\jet_project\streamlit_app.py", line 471, in <module>
+    conn, summary = load_csv_to_sqlite(
+                    ^^^^^^^^^^^^^^^^^^^
+  File "D:\jet_project\jet_core.py", line 71, in load_csv_to_sqlite
+    df = pd.read_csv(file_obj, encoding=encoding, low_memory=False)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FA\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FA\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FA\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FA\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\io\parsers\readers.py", line 1898, in _make_engine
+    return mapping[engine](f, **self.options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FA\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py", line 93, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/parsers.pyx", line 574, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 663, in pandas._libs.parsers.TextReader._get_header
+  File "pandas/_libs/parsers.pyx", line 874, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 891, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "pandas/_libs/parsers.pyx", line 2053, in pandas._libs.parsers.raise_parser_error
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x9b in position 0: invalid start byte
+2026-01-02 16:59:54,081 [INFO] jet_app - [UI] JET run finished (file=(테스트1) 2-4. 2024년 별도 분개장.csv)
+2026-01-02 17:00:44,963 [INFO] jet_app - [UI] JET run requested (file=(테스트1) 2-4. 2024년 별도 분개장.csv, size=24849929 bytes, person_names=['팍스코', 'BBBB'])
+2026-01-02 17:00:44,963 [INFO] jet_app - [UI] Step 1: load_csv_to_sqlite 시작
+2026-01-02 17:00:44,963 [INFO] jet_app.jet_core - [load_csv_to_sqlite] start (encoding=utf-8-sig)
+2026-01-02 17:00:45,451 [INFO] jet_app.jet_core - [load_csv_to_sqlite] CSV loaded: rows=117672, cols=18, columns=['회계연도', '전기일', '확정번호', '전표번호', '전표라인번호', '계정코드', '계정명', '차변', '대변', '차대변지시자', '현지통화금액', '라인적요', '공정', '공정명', '사용자', '사용자명', '거래처', '거래처명']
+2026-01-02 17:00:46,124 [INFO] jet_app.jet_core - [load_csv_to_sqlite] success: in-memory DB created, table=journal_entries, rows=117672
+2026-01-02 17:00:46,124 [INFO] jet_app - [UI] Step 1 완료: rows=117672, cols=18, missing_required=[], errors=[]
+2026-01-02 17:00:46,183 [INFO] jet_app.jet_core - [derive_years_from_db] detected years: raw=[2024] -> range=[2024]
+2026-01-02 17:00:46,183 [INFO] jet_app - [UI] Step 5: run_jet_tests 시작 (years=[2024], person_names=['팍스코', 'BBBB'], min_amount=1000000000)
+2026-01-02 17:00:46,183 [INFO] jet_app.jet_core - [run_jet_tests] start (years=[2024], person_names=['팍스코', 'BBBB'], person_birthdates=None, min_amount=1000000000)
+2026-01-02 17:00:46,183 [INFO] jet_app.jet_core - [run_jet_tests] processing year=2024
+2026-01-02 17:00:46,183 [INFO] jet_app.jet_core - [create_korean_holiday_table] building holiday table for year=2024 -> holiday_2024
+2026-01-02 17:00:46,951 [INFO] jet_app.jet_core - [create_korean_holiday_table] table=holiday_2024 created (rows=120)
+2026-01-02 17:00:46,951 [INFO] jet_app.jet_core - [run_jet_tests] building debug info for year=2024 (prefix=[2024] )
+2026-01-02 17:00:47,013 [INFO] jet_app.jet_core - [get_jet_queries] preparing queries for year=2024, holiday_table=holiday_2024, person_names=['팍스코', 'BBBB'], min_amount=1000000000
+2026-01-02 17:00:47,013 [INFO] jet_app.jet_core - [get_jet_queries] 11 queries prepared
+2026-01-02 17:00:47,029 [INFO] jet_app.jet_core - [run_jet_tests] running query '① 분기말_휴일_지정금액이상_분개' (year=2024)
+2026-01-02 17:00:47,060 [INFO] jet_app.jet_core - [run_jet_tests] running query '② 적요_조정_포함' (year=2024)
+2026-01-02 17:00:47,091 [INFO] jet_app.jet_core - [run_jet_tests] running query '③ 분기말_수정_적요' (year=2024)
+2026-01-02 17:00:47,114 [INFO] jet_app.jet_core - [run_jet_tests] running query '④ 대차불일치_전표세트' (year=2024)
+2026-01-02 17:00:47,177 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑤ 누락된_전표번호' (year=2024)
+2026-01-02 17:00:47,208 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑥ 계정별_3회이하' (year=2024)
+2026-01-02 17:00:47,302 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑦ 사용자별_3회이하' (year=2024)
+2026-01-02 17:00:47,396 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑧ 거래처별_3회이하' (year=2024)
+2026-01-02 17:00:47,630 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑨ 금액_만원단위_0000' (year=2024)
+2026-01-02 17:00:47,736 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑩ 주요인물_거래처명_매칭' (year=2024)
+2026-01-02 17:00:47,767 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑪ 마이너스_금액_분개' (year=2024)
+2026-01-02 17:00:47,798 [INFO] jet_app.jet_core - [run_jet_tests] all queries finished (count=11)
+2026-01-02 17:00:47,798 [INFO] jet_app - [UI] Step 5 완료: result_sets=11
+2026-01-02 17:00:55,408 [INFO] jet_app - [UI] ④번 전표번호별 상세 데이터 준비 중...
+2026-01-02 17:00:55,439 [INFO] jet_app - [UI] ④번 전표번호별 상세 데이터 준비 완료: 2개
+2026-01-02 17:00:55,501 [INFO] jet_app - [UI] JET run finished (file=(테스트1) 2-4. 2024년 별도 분개장.csv)
+2026-01-02 17:00:55,501 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-02 17:01:21,929 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-02 17:01:23,008 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-02 17:01:23,862 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-02 17:01:34,717 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-02 17:01:35,835 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-02 17:01:37,363 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-02 17:01:37,745 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-02 17:01:38,550 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-02 17:01:39,647 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-02 17:01:40,052 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-02 17:01:40,948 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-02 17:01:42,813 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-02 17:01:43,878 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-02 17:01:44,570 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-02 17:01:46,349 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-02 17:01:46,746 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-02 17:01:47,629 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-02 17:01:49,089 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-02 17:01:49,934 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-02 17:01:54,275 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-02 17:01:55,631 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-02 17:01:56,115 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-02 17:01:57,575 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-02 17:01:58,706 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-02 17:01:59,401 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-02 17:02:03,150 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-02 17:02:04,104 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-02 17:26:08,609 [INFO] jet_app - [UI] JET run requested (file=(테스트1) 2-4. 2024년 별도 분개장.csv, size=24849929 bytes, person_names=['BBBB', 'AAAA', '팍스코'])
+2026-01-02 17:26:08,609 [INFO] jet_app - [UI] Step 1: load_csv_to_sqlite 시작
+2026-01-02 17:26:08,609 [INFO] jet_app.jet_core - [load_csv_to_sqlite] start (encoding=utf-8-sig)
+2026-01-02 17:26:09,093 [INFO] jet_app.jet_core - [load_csv_to_sqlite] CSV loaded: rows=117672, cols=18, columns=['회계연도', '전기일', '확정번호', '전표번호', '전표라인번호', '계정코드', '계정명', '차변', '대변', '차대변지시자', '현지통화금액', '라인적요', '공정', '공정명', '사용자', '사용자명', '거래처', '거래처명']
+2026-01-02 17:26:09,705 [INFO] jet_app.jet_core - [load_csv_to_sqlite] success: in-memory DB created, table=journal_entries, rows=117672
+2026-01-02 17:26:09,705 [INFO] jet_app - [UI] Step 1 완료: rows=117672, cols=18, missing_required=[], errors=[]
+2026-01-02 17:26:09,751 [INFO] jet_app.jet_core - [derive_years_from_db] detected years: raw=[2024] -> range=[2024]
+2026-01-02 17:26:09,751 [INFO] jet_app - [UI] Step 5: run_jet_tests 시작 (years=[2024], person_names=['BBBB', 'AAAA', '팍스코'], min_amount=1000000000)
+2026-01-02 17:26:09,751 [INFO] jet_app.jet_core - [run_jet_tests] start (years=[2024], person_names=['BBBB', 'AAAA', '팍스코'], person_birthdates=['A', 'ㅍ'], min_amount=1000000000)
+2026-01-02 17:26:09,751 [INFO] jet_app.jet_core - [run_jet_tests] processing year=2024
+2026-01-02 17:26:09,751 [INFO] jet_app.jet_core - [create_korean_holiday_table] building holiday table for year=2024 -> holiday_2024
+2026-01-02 17:26:09,751 [INFO] jet_app.jet_core - [create_korean_holiday_table] table=holiday_2024 created (rows=120)
+2026-01-02 17:26:09,751 [INFO] jet_app.jet_core - [run_jet_tests] building debug info for year=2024 (prefix=[2024] )
+2026-01-02 17:26:09,798 [INFO] jet_app.jet_core - [get_jet_queries] preparing queries for year=2024, holiday_table=holiday_2024, person_names=['BBBB', 'AAAA', '팍스코'], min_amount=1000000000
+2026-01-02 17:26:09,798 [INFO] jet_app.jet_core - [get_jet_queries] 11 queries prepared
+2026-01-02 17:26:09,798 [INFO] jet_app.jet_core - [run_jet_tests] running query '① 분기말_휴일_지정금액이상_분개' (year=2024)
+2026-01-02 17:26:09,830 [INFO] jet_app.jet_core - [run_jet_tests] running query '② 적요_조정_포함' (year=2024)
+2026-01-02 17:26:09,861 [INFO] jet_app.jet_core - [run_jet_tests] running query '③ 분기말_수정_적요' (year=2024)
+2026-01-02 17:26:09,881 [INFO] jet_app.jet_core - [run_jet_tests] running query '④ 대차불일치_전표세트' (year=2024)
+2026-01-02 17:26:09,959 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑤ 누락된_전표번호' (year=2024)
+2026-01-02 17:26:09,990 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑥ 계정별_3회이하' (year=2024)
+2026-01-02 17:26:10,084 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑦ 사용자별_3회이하' (year=2024)
+2026-01-02 17:26:10,178 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑧ 거래처별_3회이하' (year=2024)
+2026-01-02 17:26:10,411 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑨ 금액_만원단위_0000' (year=2024)
+2026-01-02 17:26:10,520 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑩ 주요인물_거래처명_매칭' (year=2024)
+2026-01-02 17:26:10,552 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑪ 마이너스_금액_분개' (year=2024)
+2026-01-02 17:26:10,583 [INFO] jet_app.jet_core - [run_jet_tests] all queries finished (count=11)
+2026-01-02 17:26:10,583 [INFO] jet_app - [UI] Step 5 완료: result_sets=11
+2026-01-02 17:26:17,596 [INFO] jet_app - [UI] ④번 전표번호별 상세 데이터 준비 중...
+2026-01-02 17:26:17,630 [INFO] jet_app - [UI] ④번 전표번호별 상세 데이터 준비 완료: 2개
+2026-01-02 17:26:17,682 [INFO] jet_app - [UI] JET run finished (file=(테스트1) 2-4. 2024년 별도 분개장.csv)
+2026-01-02 17:26:17,682 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-02 17:26:38,244 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-02 17:26:44,518 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-02 17:33:32,083 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-02 17:33:32,880 [INFO] jet_app - [UI] JET run requested (file=(샘플)테스트용 분개장.csv, size=24849929 bytes, person_names=['BBBB', 'AAAA', '팍스코'])
+2026-01-02 17:33:32,880 [INFO] jet_app - [UI] Step 1: load_csv_to_sqlite 시작
+2026-01-02 17:33:32,880 [INFO] jet_app.jet_core - [load_csv_to_sqlite] start (encoding=utf-8-sig)
+2026-01-02 17:33:33,349 [INFO] jet_app.jet_core - [load_csv_to_sqlite] CSV loaded: rows=117672, cols=18, columns=['회계연도', '전기일', '확정번호', '전표번호', '전표라인번호', '계정코드', '계정명', '차변', '대변', '차대변지시자', '현지통화금액', '라인적요', '공정', '공정명', '사용자', '사용자명', '거래처', '거래처명']
+2026-01-02 17:33:33,961 [INFO] jet_app.jet_core - [load_csv_to_sqlite] success: in-memory DB created, table=journal_entries, rows=117672
+2026-01-02 17:33:33,961 [INFO] jet_app - [UI] Step 1 완료: rows=117672, cols=18, missing_required=[], errors=[]
+2026-01-02 17:33:33,992 [INFO] jet_app.jet_core - [derive_years_from_db] detected years: raw=[2024] -> range=[2024]
+2026-01-02 17:33:33,992 [INFO] jet_app - [UI] Step 5: run_jet_tests 시작 (years=[2024], person_names=['BBBB', 'AAAA', '팍스코'], min_amount=1000000000)
+2026-01-02 17:33:34,008 [INFO] jet_app.jet_core - [run_jet_tests] start (years=[2024], person_names=['BBBB', 'AAAA', '팍스코'], person_birthdates=['A', 'ㅍ'], min_amount=1000000000)
+2026-01-02 17:33:34,008 [INFO] jet_app.jet_core - [run_jet_tests] processing year=2024
+2026-01-02 17:33:34,008 [INFO] jet_app.jet_core - [create_korean_holiday_table] building holiday table for year=2024 -> holiday_2024
+2026-01-02 17:33:34,008 [INFO] jet_app.jet_core - [create_korean_holiday_table] table=holiday_2024 created (rows=120)
+2026-01-02 17:33:34,008 [INFO] jet_app.jet_core - [run_jet_tests] building debug info for year=2024 (prefix=[2024] )
+2026-01-02 17:33:34,065 [INFO] jet_app.jet_core - [get_jet_queries] preparing queries for year=2024, holiday_table=holiday_2024, person_names=['BBBB', 'AAAA', '팍스코'], min_amount=1000000000
+2026-01-02 17:33:34,065 [INFO] jet_app.jet_core - [get_jet_queries] 11 queries prepared
+2026-01-02 17:33:34,065 [INFO] jet_app.jet_core - [run_jet_tests] running query '① 분기말_휴일_지정금액이상_분개' (year=2024)
+2026-01-02 17:33:34,096 [INFO] jet_app.jet_core - [run_jet_tests] running query '② 적요_조정_포함' (year=2024)
+2026-01-02 17:33:34,127 [INFO] jet_app.jet_core - [run_jet_tests] running query '③ 분기말_수정_적요' (year=2024)
+2026-01-02 17:33:34,159 [INFO] jet_app.jet_core - [run_jet_tests] running query '④ 대차불일치_전표세트' (year=2024)
+2026-01-02 17:33:34,221 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑤ 누락된_전표번호' (year=2024)
+2026-01-02 17:33:34,252 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑥ 계정별_3회이하' (year=2024)
+2026-01-02 17:33:34,362 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑦ 사용자별_3회이하' (year=2024)
+2026-01-02 17:33:34,456 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑧ 거래처별_3회이하' (year=2024)
+2026-01-02 17:33:34,690 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑨ 금액_만원단위_0000' (year=2024)
+2026-01-02 17:33:34,799 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑩ 주요인물_거래처명_매칭' (year=2024)
+2026-01-02 17:33:34,831 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑪ 마이너스_금액_분개' (year=2024)
+2026-01-02 17:33:34,862 [INFO] jet_app.jet_core - [run_jet_tests] all queries finished (count=11)
+2026-01-02 17:33:34,862 [INFO] jet_app - [UI] Step 5 완료: result_sets=11
+2026-01-02 17:33:41,814 [INFO] jet_app - [UI] ④번 전표번호별 상세 데이터 준비 중...
+2026-01-02 17:33:41,845 [INFO] jet_app - [UI] ④번 전표번호별 상세 데이터 준비 완료: 2개
+2026-01-02 17:33:41,908 [INFO] jet_app - [UI] JET run finished (file=(샘플)테스트용 분개장.csv)
+2026-01-02 17:33:41,908 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-02 17:40:14,515 [INFO] jet_app - [UI] JET run requested (file=(테스트1) 2-4. 2024년 별도 분개장.csv, size=24849929 bytes, person_names=[])
+2026-01-02 17:40:14,515 [INFO] jet_app - [UI] Step 1: load_csv_to_sqlite 시작
+2026-01-02 17:40:14,515 [INFO] jet_app.jet_core - [load_csv_to_sqlite] start (encoding=utf-8-sig)
+2026-01-02 17:40:15,015 [INFO] jet_app.jet_core - [load_csv_to_sqlite] CSV loaded: rows=117672, cols=18, columns=['회계연도', '전기일', '확정번호', '전표번호', '전표라인번호', '계정코드', '계정명', '차변', '대변', '차대변지시자', '현지통화금액', '라인적요', '공정', '공정명', '사용자', '사용자명', '거래처', '거래처명']
+2026-01-02 17:40:15,733 [INFO] jet_app.jet_core - [load_csv_to_sqlite] success: in-memory DB created, table=journal_entries, rows=117672
+2026-01-02 17:40:15,749 [INFO] jet_app - [UI] Step 1 완료: rows=117672, cols=18, missing_required=[], errors=[]
+2026-01-02 17:40:15,780 [INFO] jet_app.jet_core - [derive_years_from_db] detected years: raw=[2024] -> range=[2024]
+2026-01-02 17:40:15,780 [INFO] jet_app - [UI] Step 5: run_jet_tests 시작 (years=[2024], person_names=[], min_amount=1000000000)
+2026-01-02 17:40:15,796 [INFO] jet_app.jet_core - [run_jet_tests] start (years=[2024], person_names=None, person_birthdates=None, min_amount=1000000000)
+2026-01-02 17:40:15,796 [INFO] jet_app.jet_core - [run_jet_tests] processing year=2024
+2026-01-02 17:40:15,796 [INFO] jet_app.jet_core - [create_korean_holiday_table] building holiday table for year=2024 -> holiday_2024
+2026-01-02 17:40:15,812 [INFO] jet_app.jet_core - [create_korean_holiday_table] table=holiday_2024 created (rows=120)
+2026-01-02 17:40:15,812 [INFO] jet_app.jet_core - [run_jet_tests] building debug info for year=2024 (prefix=[2024] )
+2026-01-02 17:40:15,874 [INFO] jet_app.jet_core - [get_jet_queries] preparing queries for year=2024, holiday_table=holiday_2024, person_names=None, min_amount=1000000000
+2026-01-02 17:40:15,874 [INFO] jet_app.jet_core - [get_jet_queries] 11 queries prepared
+2026-01-02 17:40:15,874 [INFO] jet_app.jet_core - [run_jet_tests] running query '① 분기말_휴일_지정금액이상_분개' (year=2024)
+2026-01-02 17:40:15,921 [INFO] jet_app.jet_core - [run_jet_tests] running query '② 적요_조정_포함' (year=2024)
+2026-01-02 17:40:15,963 [INFO] jet_app.jet_core - [run_jet_tests] running query '③ 분기말_수정_적요' (year=2024)
+2026-01-02 17:40:15,984 [INFO] jet_app.jet_core - [run_jet_tests] running query '④ 대차불일치_전표세트' (year=2024)
+2026-01-02 17:40:16,062 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑤ 누락된_전표번호' (year=2024)
+2026-01-02 17:40:16,093 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑥ 계정별_3회이하' (year=2024)
+2026-01-02 17:40:16,218 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑦ 사용자별_3회이하' (year=2024)
+2026-01-02 17:40:16,312 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑧ 거래처별_3회이하' (year=2024)
+2026-01-02 17:40:16,551 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑨ 금액_만원단위_0000' (year=2024)
+2026-01-02 17:40:16,655 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑩ 주요인물_거래처명_매칭' (year=2024)
+2026-01-02 17:40:16,655 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑪ 마이너스_금액_분개' (year=2024)
+2026-01-02 17:40:16,689 [INFO] jet_app.jet_core - [run_jet_tests] all queries finished (count=11)
+2026-01-02 17:40:16,689 [INFO] jet_app - [UI] Step 5 완료: result_sets=11
+2026-01-02 17:40:23,655 [INFO] jet_app - [UI] ④번 전표번호별 상세 데이터 준비 중...
+2026-01-02 17:40:23,702 [INFO] jet_app - [UI] ④번 전표번호별 상세 데이터 준비 완료: 2개
+2026-01-02 17:40:23,858 [INFO] jet_app - [UI] JET run finished (file=(테스트1) 2-4. 2024년 별도 분개장.csv)
+2026-01-02 17:40:23,874 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-02 17:41:18,819 [WARNING] jet_app - [UI] run_button clicked without file upload
+2026-01-02 17:41:56,562 [WARNING] jet_app - [UI] run_button clicked without file upload
+2026-01-02 17:41:57,921 [WARNING] jet_app - [UI] run_button clicked without file upload
+2026-01-02 17:47:15,249 [WARNING] jet_app - [UI] run_button clicked without file upload
+2026-01-02 17:47:16,124 [WARNING] jet_app - [UI] run_button clicked without file upload
+2026-01-02 17:53:45,905 [WARNING] jet_app - [UI] run_button clicked without file upload
+2026-01-05 08:20:02,937 [INFO] jet_app - [UI] JET run requested (file=(샘플)테스트용 분개장.csv, size=24855568 bytes, person_names=['서브원'])
+2026-01-05 08:20:41,437 [INFO] jet_app - [UI] JET run requested (file=(샘플)테스트용 분개장.csv, size=24855568 bytes, person_names=['서브원'])
+2026-01-05 08:21:03,859 [INFO] jet_app - [UI] JET run requested (file=(샘플)테스트용 분개장.csv, size=24855568 bytes, person_names=['서브원'])
+2026-01-05 08:23:42,874 [INFO] jet_app - [UI] JET run requested (file=(샘플)테스트용 분개장-복호화.csv, size=24849929 bytes, person_names=['서브원'])
+2026-01-05 08:25:27,703 [INFO] jet_app - [UI] JET run requested (file=(샘플)테스트용 분개장-복호화.csv, size=24849929 bytes, person_names=['(주)서브원'])
+2026-01-05 08:59:43,626 [INFO] jet_app - [UI] JET run requested (file=(샘플)테스트용 분개장.csv, size=24849929 bytes, person_names=[])
+2026-01-05 09:11:37,252 [INFO] jet_app - [UI] JET run requested (file=(테스트1) 2-4. 2024년 별도 분개장.csv, size=24849929 bytes, person_names=[])
+2026-01-05 09:12:56,290 [INFO] jet_app - [UI] JET run requested (file=(샘플)테스트용 분개장.csv, size=24849929 bytes, person_names=[])
+2026-01-05 09:13:04,689 [INFO] jet_app - [UI] JET run requested (file=(샘플)테스트용 분개장.csv, size=24849929 bytes, person_names=[])
+2026-01-05 09:13:45,016 [INFO] jet_app - [UI] JET run requested (file=(샘플)테스트용 분개장.csv, size=24849929 bytes, person_names=[])
+2026-01-05 09:13:46,706 [INFO] jet_app - [UI] JET run requested (file=(샘플)테스트용 분개장.csv, size=24849929 bytes, person_names=[])
+2026-01-05 09:14:03,803 [INFO] jet_app - [UI] JET run requested (file=(샘플)테스트용 분개장.csv, size=24849929 bytes, person_names=[])
+2026-01-05 09:26:06,822 [INFO] jet_app - [UI] JET run requested (file=(테스트)22-24분개장.csv, size=57531744 bytes, person_names=[])
+2026-01-05 09:26:21,345 [INFO] jet_app - [UI] JET run requested (file=(테스트)22-24분개장.csv, size=57531744 bytes, person_names=[])
+2026-01-05 09:27:00,489 [INFO] jet_app - [UI] JET run requested (file=(테스트)22-24분개장.csv, size=57531744 bytes, person_names=[])
+2026-01-05 09:27:04,947 [INFO] jet_app - [UI] Step 1: load_csv_to_sqlite 시작
+2026-01-05 09:27:05,376 [INFO] jet_app.jet_core - [load_csv_to_sqlite] start (encoding=utf-8-sig)
+2026-01-05 09:27:05,395 [INFO] jet_app - [UI] Step 1: load_csv_to_sqlite 시작
+2026-01-05 09:27:05,396 [INFO] jet_app.jet_core - [load_csv_to_sqlite] start (encoding=utf-8-sig)
+2026-01-05 09:27:06,100 [INFO] jet_app.jet_core - [load_csv_to_sqlite] CSV loaded: rows=117672, cols=18, columns=['회계연도', '전기일', '확정번호', '전표번호', '전표라인번호', '계정코드', '계정명', '차변', '대변', '차대변지시자', '현지통화금액', '라인적요', '공정', '공정명', '사용자', '사용자명', '거래처', '거래처명']
+2026-01-05 09:27:07,632 [INFO] jet_app.jet_core - [load_csv_to_sqlite] CSV loaded: rows=275099, cols=18, columns=['회계연도', '전기일', '확정번호', '전표번호', '전표라인번호', '계정코드', '계정명', '차변', '대변', '차대변지시자', '라인적용', '현지통화금액', '공정', '공정명', '사용자', '사용자명', '거래처', '거래처명']
+2026-01-05 09:27:08,107 [ERROR] jet_app.jet_core - [load_csv_to_sqlite] validation failed: 누락된 필수 컬럼: 라인적요
+2026-01-05 09:27:08,141 [INFO] jet_app - [UI] Step 1 완료: rows=275099, cols=18, missing_required=['라인적요'], errors=['누락된 필수 컬럼: 라인적요']
+2026-01-05 09:27:08,161 [ERROR] jet_app - [UI] CSV 구조 오류로 JET 실행 중단: 누락된 필수 컬럼: 라인적요
+2026-01-05 09:27:08,303 [INFO] jet_app - [UI] JET run finished (file=(테스트)22-24분개장.csv)
+2026-01-05 09:27:08,574 [INFO] jet_app.jet_core - [load_csv_to_sqlite] success: in-memory DB created, table=journal_entries, rows=117672
+2026-01-05 09:27:08,595 [INFO] jet_app - [UI] Step 1 완료: rows=117672, cols=18, missing_required=[], errors=[]
+2026-01-05 09:27:08,635 [INFO] jet_app.jet_core - [derive_years_from_db] detected years: raw=[2024] -> range=[2024]
+2026-01-05 09:27:08,638 [INFO] jet_app - [UI] Step 5: run_jet_tests 시작 (years=[2024], person_names=[], min_amount=1000000)
+2026-01-05 09:27:08,640 [INFO] jet_app.jet_core - [run_jet_tests] start (years=[2024], person_names=None, person_birthdates=None, min_amount=1000000)
+2026-01-05 09:27:08,641 [INFO] jet_app.jet_core - [run_jet_tests] processing year=2024
+2026-01-05 09:27:08,642 [INFO] jet_app.jet_core - [create_korean_holiday_table] building holiday table for year=2024 -> holiday_2024
+2026-01-05 09:27:08,647 [INFO] jet_app.jet_core - [create_korean_holiday_table] table=holiday_2024 created (rows=120)
+2026-01-05 09:27:08,648 [INFO] jet_app.jet_core - [run_jet_tests] building debug info for year=2024 (prefix=[2024] )
+2026-01-05 09:27:08,694 [INFO] jet_app.jet_core - [get_jet_queries] preparing queries for year=2024, holiday_table=holiday_2024, person_names=None, min_amount=1000000
+2026-01-05 09:27:08,696 [INFO] jet_app.jet_core - [get_jet_queries] 11 queries prepared
+2026-01-05 09:27:08,697 [INFO] jet_app.jet_core - [run_jet_tests] running query '① 분기말_휴일_지정금액이상_분개' (year=2024)
+2026-01-05 09:27:08,747 [INFO] jet_app.jet_core - [run_jet_tests] running query '② 적요_조정_포함' (year=2024)
+2026-01-05 09:27:08,788 [INFO] jet_app.jet_core - [run_jet_tests] running query '③ 분기말_수정_적요' (year=2024)
+2026-01-05 09:27:08,830 [INFO] jet_app.jet_core - [run_jet_tests] running query '④ 대차불일치_전표세트' (year=2024)
+2026-01-05 09:27:08,899 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑤ 누락된_전표번호' (year=2024)
+2026-01-05 09:27:08,939 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑥ 계정별_3회이하' (year=2024)
+2026-01-05 09:27:09,047 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑦ 사용자별_3회이하' (year=2024)
+2026-01-05 09:27:09,157 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑧ 거래처별_3회이하' (year=2024)
+2026-01-05 09:27:09,382 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑨ 금액_만원단위_0000' (year=2024)
+2026-01-05 09:27:09,511 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑩ 주요인물_거래처명_매칭' (year=2024)
+2026-01-05 09:27:09,517 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑪ 마이너스_금액_분개' (year=2024)
+2026-01-05 09:27:09,556 [INFO] jet_app.jet_core - [run_jet_tests] all queries finished (count=11)
+2026-01-05 09:27:09,562 [INFO] jet_app - [UI] Step 5 완료: result_sets=11
+2026-01-05 09:27:17,071 [INFO] jet_app - [UI] ④번 전표번호별 상세 데이터 준비 중...
+2026-01-05 09:27:17,105 [INFO] jet_app - [UI] ④번 전표번호별 상세 데이터 준비 완료: 2개
+2026-01-05 09:27:17,162 [INFO] jet_app - [UI] JET run finished (file=(샘플)테스트용 분개장.csv)
+2026-01-05 09:27:17,166 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-05 09:29:53,962 [INFO] jet_app - [UI] JET run requested (file=(테스트)22-24분개장.csv, size=57531744 bytes, person_names=[])
+2026-01-05 09:29:53,970 [INFO] jet_app - [UI] Step 1: load_csv_to_sqlite 시작
+2026-01-05 09:29:53,971 [INFO] jet_app.jet_core - [load_csv_to_sqlite] start (encoding=utf-8-sig)
+2026-01-05 09:29:55,360 [INFO] jet_app.jet_core - [load_csv_to_sqlite] CSV loaded: rows=275099, cols=18, columns=['회계연도', '전기일', '확정번호', '전표번호', '전표라인번호', '계정코드', '계정명', '차변', '대변', '차대변지시자', '라인적요', '현지통화금액', '공정', '공정명', '사용자', '사용자명', '거래처', '거래처명']
+2026-01-05 09:29:56,672 [INFO] jet_app.jet_core - [load_csv_to_sqlite] success: in-memory DB created, table=journal_entries, rows=275099
+2026-01-05 09:29:56,704 [INFO] jet_app - [UI] Step 1 완료: rows=275099, cols=18, missing_required=[], errors=[]
+2026-01-05 09:29:56,768 [INFO] jet_app.jet_core - [derive_years_from_db] detected years: raw=[2024, 2023, 2022] -> range=[2022, 2023, 2024]
+2026-01-05 09:29:56,772 [INFO] jet_app - [UI] Step 5: run_jet_tests 시작 (years=[2022, 2023, 2024], person_names=[], min_amount=1000000000)
+2026-01-05 09:29:56,774 [INFO] jet_app.jet_core - [run_jet_tests] start (years=[2022, 2023, 2024], person_names=None, person_birthdates=None, min_amount=1000000000)
+2026-01-05 09:29:56,776 [INFO] jet_app.jet_core - [run_jet_tests] processing year=2022
+2026-01-05 09:29:56,777 [INFO] jet_app.jet_core - [create_korean_holiday_table] building holiday table for year=2022 -> holiday_2022
+2026-01-05 09:29:56,788 [INFO] jet_app.jet_core - [create_korean_holiday_table] table=holiday_2022 created (rows=118)
+2026-01-05 09:29:56,789 [INFO] jet_app.jet_core - [run_jet_tests] building debug info for year=2022 (prefix=[2022] )
+2026-01-05 09:29:56,872 [INFO] jet_app.jet_core - [get_jet_queries] preparing queries for year=2022, holiday_table=holiday_2022, person_names=None, min_amount=1000000000
+2026-01-05 09:29:56,875 [INFO] jet_app.jet_core - [get_jet_queries] 11 queries prepared
+2026-01-05 09:29:56,877 [INFO] jet_app.jet_core - [run_jet_tests] running query '① 분기말_휴일_지정금액이상_분개' (year=2022)
+2026-01-05 09:29:56,951 [INFO] jet_app.jet_core - [run_jet_tests] running query '② 적요_조정_포함' (year=2022)
+2026-01-05 09:29:57,033 [INFO] jet_app.jet_core - [run_jet_tests] running query '③ 분기말_수정_적요' (year=2022)
+2026-01-05 09:29:57,116 [INFO] jet_app.jet_core - [run_jet_tests] running query '④ 대차불일치_전표세트' (year=2022)
+2026-01-05 09:29:57,289 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑤ 누락된_전표번호' (year=2022)
+2026-01-05 09:29:57,391 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑥ 계정별_3회이하' (year=2022)
+2026-01-05 09:29:57,653 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑦ 사용자별_3회이하' (year=2022)
+2026-01-05 09:29:57,908 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑧ 거래처별_3회이하' (year=2022)
+2026-01-05 09:29:58,469 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑨ 금액_만원단위_0000' (year=2022)
+2026-01-05 09:29:58,747 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑩ 주요인물_거래처명_매칭' (year=2022)
+2026-01-05 09:29:58,752 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑪ 마이너스_금액_분개' (year=2022)
+2026-01-05 09:29:58,854 [INFO] jet_app.jet_core - [run_jet_tests] processing year=2023
+2026-01-05 09:29:58,857 [INFO] jet_app.jet_core - [create_korean_holiday_table] building holiday table for year=2023 -> holiday_2023
+2026-01-05 09:29:58,866 [INFO] jet_app.jet_core - [create_korean_holiday_table] table=holiday_2023 created (rows=118)
+2026-01-05 09:29:58,867 [INFO] jet_app.jet_core - [run_jet_tests] building debug info for year=2023 (prefix=[2023] )
+2026-01-05 09:29:58,956 [INFO] jet_app.jet_core - [get_jet_queries] preparing queries for year=2023, holiday_table=holiday_2023, person_names=None, min_amount=1000000000
+2026-01-05 09:29:58,958 [INFO] jet_app.jet_core - [get_jet_queries] 11 queries prepared
+2026-01-05 09:29:58,961 [INFO] jet_app.jet_core - [run_jet_tests] running query '① 분기말_휴일_지정금액이상_분개' (year=2023)
+2026-01-05 09:29:59,041 [INFO] jet_app.jet_core - [run_jet_tests] running query '② 적요_조정_포함' (year=2023)
+2026-01-05 09:29:59,128 [INFO] jet_app.jet_core - [run_jet_tests] running query '③ 분기말_수정_적요' (year=2023)
+2026-01-05 09:29:59,217 [INFO] jet_app.jet_core - [run_jet_tests] running query '④ 대차불일치_전표세트' (year=2023)
+2026-01-05 09:29:59,394 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑤ 누락된_전표번호' (year=2023)
+2026-01-05 09:29:59,484 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑥ 계정별_3회이하' (year=2023)
+2026-01-05 09:29:59,753 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑦ 사용자별_3회이하' (year=2023)
+2026-01-05 09:30:00,023 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑧ 거래처별_3회이하' (year=2023)
+2026-01-05 09:30:00,654 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑨ 금액_만원단위_0000' (year=2023)
+2026-01-05 09:30:00,960 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑩ 주요인물_거래처명_매칭' (year=2023)
+2026-01-05 09:30:00,964 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑪ 마이너스_금액_분개' (year=2023)
+2026-01-05 09:30:01,065 [INFO] jet_app.jet_core - [run_jet_tests] processing year=2024
+2026-01-05 09:30:01,069 [INFO] jet_app.jet_core - [create_korean_holiday_table] building holiday table for year=2024 -> holiday_2024
+2026-01-05 09:30:01,074 [INFO] jet_app.jet_core - [create_korean_holiday_table] table=holiday_2024 created (rows=120)
+2026-01-05 09:30:01,076 [INFO] jet_app.jet_core - [run_jet_tests] building debug info for year=2024 (prefix=[2024] )
+2026-01-05 09:30:01,166 [INFO] jet_app.jet_core - [get_jet_queries] preparing queries for year=2024, holiday_table=holiday_2024, person_names=None, min_amount=1000000000
+2026-01-05 09:30:01,168 [INFO] jet_app.jet_core - [get_jet_queries] 11 queries prepared
+2026-01-05 09:30:01,170 [INFO] jet_app.jet_core - [run_jet_tests] running query '① 분기말_휴일_지정금액이상_분개' (year=2024)
+2026-01-05 09:30:01,247 [INFO] jet_app.jet_core - [run_jet_tests] running query '② 적요_조정_포함' (year=2024)
+2026-01-05 09:30:01,335 [INFO] jet_app.jet_core - [run_jet_tests] running query '③ 분기말_수정_적요' (year=2024)
+2026-01-05 09:30:01,421 [INFO] jet_app.jet_core - [run_jet_tests] running query '④ 대차불일치_전표세트' (year=2024)
+2026-01-05 09:30:01,590 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑤ 누락된_전표번호' (year=2024)
+2026-01-05 09:30:01,680 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑥ 계정별_3회이하' (year=2024)
+2026-01-05 09:30:01,940 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑦ 사용자별_3회이하' (year=2024)
+2026-01-05 09:30:02,205 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑧ 거래처별_3회이하' (year=2024)
+2026-01-05 09:30:02,748 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑨ 금액_만원단위_0000' (year=2024)
+2026-01-05 09:30:03,045 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑩ 주요인물_거래처명_매칭' (year=2024)
+2026-01-05 09:30:03,050 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑪ 마이너스_금액_분개' (year=2024)
+2026-01-05 09:30:03,169 [INFO] jet_app.jet_core - [run_jet_tests] all queries finished (count=11)
+2026-01-05 09:30:03,202 [INFO] jet_app - [UI] Step 5 완료: result_sets=11
+2026-01-05 09:30:54,859 [INFO] jet_app - [UI] JET run finished (file=(테스트)22-24분개장.csv)
+2026-01-05 09:30:54,862 [INFO] jet_app - [render_results] rendering results for years=[2022, 2023, 2024] (result_sets=11)
+2026-01-05 09:35:00,833 [INFO] jet_app - [UI] JET run requested (file=(테스트)22-24분개장.csv, size=57531744 bytes, person_names=['메디콕스', '싸이토젠', '팍스코', '박준일'])
+2026-01-05 09:35:00,840 [INFO] jet_app - [UI] Step 1: load_csv_to_sqlite 시작
+2026-01-05 09:35:00,841 [INFO] jet_app.jet_core - [load_csv_to_sqlite] start (encoding=utf-8-sig)
+2026-01-05 09:35:02,219 [INFO] jet_app.jet_core - [load_csv_to_sqlite] CSV loaded: rows=275099, cols=18, columns=['회계연도', '전기일', '확정번호', '전표번호', '전표라인번호', '계정코드', '계정명', '차변', '대변', '차대변지시자', '라인적요', '현지통화금액', '공정', '공정명', '사용자', '사용자명', '거래처', '거래처명']
+2026-01-05 09:35:03,622 [INFO] jet_app.jet_core - [load_csv_to_sqlite] success: in-memory DB created, table=journal_entries, rows=275099
+2026-01-05 09:35:03,654 [INFO] jet_app - [UI] Step 1 완료: rows=275099, cols=18, missing_required=[], errors=[]
+2026-01-05 09:35:03,722 [INFO] jet_app.jet_core - [derive_years_from_db] detected years: raw=[2024, 2023, 2022] -> range=[2022, 2023, 2024]
+2026-01-05 09:35:03,725 [INFO] jet_app - [UI] Step 5: run_jet_tests 시작 (years=[2022, 2023, 2024], person_names=['메디콕스', '싸이토젠', '팍스코', '박준일'], min_amount=1000000000)
+2026-01-05 09:35:03,727 [INFO] jet_app.jet_core - [run_jet_tests] start (years=[2022, 2023, 2024], person_names=['메디콕스', '싸이토젠', '팍스코', '박준일'], person_birthdates=None, min_amount=1000000000)
+2026-01-05 09:35:03,729 [INFO] jet_app.jet_core - [run_jet_tests] processing year=2022
+2026-01-05 09:35:03,729 [INFO] jet_app.jet_core - [create_korean_holiday_table] building holiday table for year=2022 -> holiday_2022
+2026-01-05 09:35:03,738 [INFO] jet_app.jet_core - [create_korean_holiday_table] table=holiday_2022 created (rows=118)
+2026-01-05 09:35:03,739 [INFO] jet_app.jet_core - [run_jet_tests] building debug info for year=2022 (prefix=[2022] )
+2026-01-05 09:35:03,818 [INFO] jet_app.jet_core - [get_jet_queries] preparing queries for year=2022, holiday_table=holiday_2022, person_names=['메디콕스', '싸이토젠', '팍스코', '박준일'], min_amount=1000000000
+2026-01-05 09:35:03,820 [INFO] jet_app.jet_core - [get_jet_queries] 11 queries prepared
+2026-01-05 09:35:03,821 [INFO] jet_app.jet_core - [run_jet_tests] running query '① 분기말_휴일_지정금액이상_분개' (year=2022)
+2026-01-05 09:35:03,891 [INFO] jet_app.jet_core - [run_jet_tests] running query '② 적요_조정_포함' (year=2022)
+2026-01-05 09:35:03,972 [INFO] jet_app.jet_core - [run_jet_tests] running query '③ 분기말_수정_적요' (year=2022)
+2026-01-05 09:35:04,067 [INFO] jet_app.jet_core - [run_jet_tests] running query '④ 대차불일치_전표세트' (year=2022)
+2026-01-05 09:35:04,245 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑤ 누락된_전표번호' (year=2022)
+2026-01-05 09:35:04,341 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑥ 계정별_3회이하' (year=2022)
+2026-01-05 09:35:04,601 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑦ 사용자별_3회이하' (year=2022)
+2026-01-05 09:35:04,853 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑧ 거래처별_3회이하' (year=2022)
+2026-01-05 09:35:05,407 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑨ 금액_만원단위_0000' (year=2022)
+2026-01-05 09:35:05,677 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑩ 주요인물_거래처명_매칭' (year=2022)
+2026-01-05 09:35:05,785 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑪ 마이너스_금액_분개' (year=2022)
+2026-01-05 09:35:05,897 [INFO] jet_app.jet_core - [run_jet_tests] processing year=2023
+2026-01-05 09:35:05,902 [INFO] jet_app.jet_core - [create_korean_holiday_table] building holiday table for year=2023 -> holiday_2023
+2026-01-05 09:35:05,906 [INFO] jet_app.jet_core - [create_korean_holiday_table] table=holiday_2023 created (rows=118)
+2026-01-05 09:35:05,907 [INFO] jet_app.jet_core - [run_jet_tests] building debug info for year=2023 (prefix=[2023] )
+2026-01-05 09:35:05,991 [INFO] jet_app.jet_core - [get_jet_queries] preparing queries for year=2023, holiday_table=holiday_2023, person_names=['메디콕스', '싸이토젠', '팍스코', '박준일'], min_amount=1000000000
+2026-01-05 09:35:05,993 [INFO] jet_app.jet_core - [get_jet_queries] 11 queries prepared
+2026-01-05 09:35:05,994 [INFO] jet_app.jet_core - [run_jet_tests] running query '① 분기말_휴일_지정금액이상_분개' (year=2023)
+2026-01-05 09:35:06,073 [INFO] jet_app.jet_core - [run_jet_tests] running query '② 적요_조정_포함' (year=2023)
+2026-01-05 09:35:06,164 [INFO] jet_app.jet_core - [run_jet_tests] running query '③ 분기말_수정_적요' (year=2023)
+2026-01-05 09:35:06,247 [INFO] jet_app.jet_core - [run_jet_tests] running query '④ 대차불일치_전표세트' (year=2023)
+2026-01-05 09:35:06,410 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑤ 누락된_전표번호' (year=2023)
+2026-01-05 09:35:06,500 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑥ 계정별_3회이하' (year=2023)
+2026-01-05 09:35:06,791 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑦ 사용자별_3회이하' (year=2023)
+2026-01-05 09:35:07,072 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑧ 거래처별_3회이하' (year=2023)
+2026-01-05 09:35:07,672 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑨ 금액_만원단위_0000' (year=2023)
+2026-01-05 09:35:08,010 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑩ 주요인물_거래처명_매칭' (year=2023)
+2026-01-05 09:35:08,126 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑪ 마이너스_금액_분개' (year=2023)
+2026-01-05 09:35:08,220 [INFO] jet_app.jet_core - [run_jet_tests] processing year=2024
+2026-01-05 09:35:08,223 [INFO] jet_app.jet_core - [create_korean_holiday_table] building holiday table for year=2024 -> holiday_2024
+2026-01-05 09:35:08,229 [INFO] jet_app.jet_core - [create_korean_holiday_table] table=holiday_2024 created (rows=120)
+2026-01-05 09:35:08,230 [INFO] jet_app.jet_core - [run_jet_tests] building debug info for year=2024 (prefix=[2024] )
+2026-01-05 09:35:08,319 [INFO] jet_app.jet_core - [get_jet_queries] preparing queries for year=2024, holiday_table=holiday_2024, person_names=['메디콕스', '싸이토젠', '팍스코', '박준일'], min_amount=1000000000
+2026-01-05 09:35:08,322 [INFO] jet_app.jet_core - [get_jet_queries] 11 queries prepared
+2026-01-05 09:35:08,324 [INFO] jet_app.jet_core - [run_jet_tests] running query '① 분기말_휴일_지정금액이상_분개' (year=2024)
+2026-01-05 09:35:08,402 [INFO] jet_app.jet_core - [run_jet_tests] running query '② 적요_조정_포함' (year=2024)
+2026-01-05 09:35:08,484 [INFO] jet_app.jet_core - [run_jet_tests] running query '③ 분기말_수정_적요' (year=2024)
+2026-01-05 09:35:08,569 [INFO] jet_app.jet_core - [run_jet_tests] running query '④ 대차불일치_전표세트' (year=2024)
+2026-01-05 09:35:08,753 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑤ 누락된_전표번호' (year=2024)
+2026-01-05 09:35:08,850 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑥ 계정별_3회이하' (year=2024)
+2026-01-05 09:35:09,129 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑦ 사용자별_3회이하' (year=2024)
+2026-01-05 09:35:09,387 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑧ 거래처별_3회이하' (year=2024)
+2026-01-05 09:35:09,949 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑨ 금액_만원단위_0000' (year=2024)
+2026-01-05 09:35:10,256 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑩ 주요인물_거래처명_매칭' (year=2024)
+2026-01-05 09:35:10,371 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑪ 마이너스_금액_분개' (year=2024)
+2026-01-05 09:35:10,530 [INFO] jet_app.jet_core - [run_jet_tests] all queries finished (count=11)
+2026-01-05 09:35:10,582 [INFO] jet_app - [UI] Step 5 완료: result_sets=11
+2026-01-05 09:35:59,731 [INFO] jet_app - [UI] JET run finished (file=(테스트)22-24분개장.csv)
+2026-01-05 09:35:59,736 [INFO] jet_app - [render_results] rendering results for years=[2022, 2023, 2024] (result_sets=11)
+2026-01-05 09:36:46,064 [INFO] jet_app - [render_results] rendering results for years=[2022, 2023, 2024] (result_sets=11)
+2026-01-05 09:59:35,907 [INFO] jet_app - === JET Streamlit app logging initialized ===
+2026-01-05 09:59:35,938 [INFO] jet_app - Log file: jet_app.log
+2026-01-05 10:00:22,057 [INFO] jet_app - [UI] JET run requested (file=(테스트)22-24분개장.csv, size=57531744 bytes, person_names=[])
+2026-01-05 10:00:22,057 [INFO] jet_app - [UI] Step 1: load_csv_to_sqlite 시작
+2026-01-05 10:00:22,057 [INFO] jet_app.jet_core - [load_csv_to_sqlite] start (encoding=utf-8-sig)
+2026-01-05 10:00:23,478 [INFO] jet_app.jet_core - [load_csv_to_sqlite] CSV loaded: rows=275099, cols=18, columns=['회계연도', '전기일', '확정번호', '전표번호', '전표라인번호', '계정코드', '계정명', '차변', '대변', '차대변지시자', '라인적요', '현지통화금액', '공정', '공정명', '사용자', '사용자명', '거래처', '거래처명']
+2026-01-05 10:00:24,870 [INFO] jet_app.jet_core - [load_csv_to_sqlite] success: in-memory DB created, table=journal_entries, rows=275099
+2026-01-05 10:00:24,906 [INFO] jet_app - [UI] Step 1 완료: rows=275099, cols=18, missing_required=[], errors=[]
+2026-01-05 10:00:24,993 [INFO] jet_app.jet_core - [derive_years_from_db] detected years: raw=[2024, 2023, 2022] -> range=[2022, 2023, 2024]
+2026-01-05 10:00:24,993 [INFO] jet_app - [UI] Step 5: run_jet_tests 시작 (years=[2022, 2023, 2024], person_names=[], min_amount=1000000000)
+2026-01-05 10:00:24,993 [INFO] jet_app.jet_core - [run_jet_tests] start (years=[2022, 2023, 2024], person_names=None, person_birthdates=None, min_amount=1000000000)
+2026-01-05 10:00:24,993 [INFO] jet_app.jet_core - [run_jet_tests] processing year=2022
+2026-01-05 10:00:24,993 [INFO] jet_app.jet_core - [create_korean_holiday_table] building holiday table for year=2022 -> holiday_2022
+2026-01-05 10:00:25,810 [INFO] jet_app.jet_core - [create_korean_holiday_table] table=holiday_2022 created (rows=118)
+2026-01-05 10:00:25,810 [INFO] jet_app.jet_core - [run_jet_tests] building debug info for year=2022 (prefix=[2022] )
+2026-01-05 10:00:25,904 [INFO] jet_app.jet_core - [get_jet_queries] preparing queries for year=2022, holiday_table=holiday_2022, person_names=None, min_amount=1000000000
+2026-01-05 10:00:25,920 [INFO] jet_app.jet_core - [get_jet_queries] 11 queries prepared
+2026-01-05 10:00:25,920 [INFO] jet_app.jet_core - [run_jet_tests] running query '① 분기말_휴일_지정금액이상_분개' (year=2022)
+2026-01-05 10:00:25,982 [INFO] jet_app.jet_core - [run_jet_tests] running query '② 적요_조정_포함' (year=2022)
+2026-01-05 10:00:26,060 [INFO] jet_app.jet_core - [run_jet_tests] running query '③ 분기말_수정_적요' (year=2022)
+2026-01-05 10:00:26,145 [INFO] jet_app.jet_core - [run_jet_tests] running query '④ 대차불일치_전표세트' (year=2022)
+2026-01-05 10:00:26,301 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑤ 누락된_전표번호' (year=2022)
+2026-01-05 10:00:26,382 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑥ 계정별_3회이하' (year=2022)
+2026-01-05 10:00:26,632 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑦ 사용자별_3회이하' (year=2022)
+2026-01-05 10:00:26,882 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑧ 거래처별_3회이하' (year=2022)
+2026-01-05 10:00:27,401 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑨ 금액_만원단위_0000' (year=2022)
+2026-01-05 10:00:27,690 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑩ 주요인물_거래처명_매칭' (year=2022)
+2026-01-05 10:00:27,690 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑪ 마이너스_금액_분개' (year=2022)
+2026-01-05 10:00:27,759 [INFO] jet_app.jet_core - [run_jet_tests] processing year=2023
+2026-01-05 10:00:27,759 [INFO] jet_app.jet_core - [create_korean_holiday_table] building holiday table for year=2023 -> holiday_2023
+2026-01-05 10:00:27,775 [INFO] jet_app.jet_core - [create_korean_holiday_table] table=holiday_2023 created (rows=118)
+2026-01-05 10:00:27,775 [INFO] jet_app.jet_core - [run_jet_tests] building debug info for year=2023 (prefix=[2023] )
+2026-01-05 10:00:27,869 [INFO] jet_app.jet_core - [get_jet_queries] preparing queries for year=2023, holiday_table=holiday_2023, person_names=None, min_amount=1000000000
+2026-01-05 10:00:27,869 [INFO] jet_app.jet_core - [get_jet_queries] 11 queries prepared
+2026-01-05 10:00:27,869 [INFO] jet_app.jet_core - [run_jet_tests] running query '① 분기말_휴일_지정금액이상_분개' (year=2023)
+2026-01-05 10:00:27,946 [INFO] jet_app.jet_core - [run_jet_tests] running query '② 적요_조정_포함' (year=2023)
+2026-01-05 10:00:28,028 [INFO] jet_app.jet_core - [run_jet_tests] running query '③ 분기말_수정_적요' (year=2023)
+2026-01-05 10:00:28,106 [INFO] jet_app.jet_core - [run_jet_tests] running query '④ 대차불일치_전표세트' (year=2023)
+2026-01-05 10:00:28,263 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑤ 누락된_전표번호' (year=2023)
+2026-01-05 10:00:28,356 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑥ 계정별_3회이하' (year=2023)
+2026-01-05 10:00:28,606 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑦ 사용자별_3회이하' (year=2023)
+2026-01-05 10:00:28,856 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑧ 거래처별_3회이하' (year=2023)
+2026-01-05 10:00:29,395 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑨ 금액_만원단위_0000' (year=2023)
+2026-01-05 10:00:29,690 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑩ 주요인물_거래처명_매칭' (year=2023)
+2026-01-05 10:00:29,690 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑪ 마이너스_금액_분개' (year=2023)
+2026-01-05 10:00:29,769 [INFO] jet_app.jet_core - [run_jet_tests] processing year=2024
+2026-01-05 10:00:29,784 [INFO] jet_app.jet_core - [create_korean_holiday_table] building holiday table for year=2024 -> holiday_2024
+2026-01-05 10:00:29,784 [INFO] jet_app.jet_core - [create_korean_holiday_table] table=holiday_2024 created (rows=120)
+2026-01-05 10:00:29,784 [INFO] jet_app.jet_core - [run_jet_tests] building debug info for year=2024 (prefix=[2024] )
+2026-01-05 10:00:29,862 [INFO] jet_app.jet_core - [get_jet_queries] preparing queries for year=2024, holiday_table=holiday_2024, person_names=None, min_amount=1000000000
+2026-01-05 10:00:29,862 [INFO] jet_app.jet_core - [get_jet_queries] 11 queries prepared
+2026-01-05 10:00:29,862 [INFO] jet_app.jet_core - [run_jet_tests] running query '① 분기말_휴일_지정금액이상_분개' (year=2024)
+2026-01-05 10:00:29,947 [INFO] jet_app.jet_core - [run_jet_tests] running query '② 적요_조정_포함' (year=2024)
+2026-01-05 10:00:30,025 [INFO] jet_app.jet_core - [run_jet_tests] running query '③ 분기말_수정_적요' (year=2024)
+2026-01-05 10:00:30,103 [INFO] jet_app.jet_core - [run_jet_tests] running query '④ 대차불일치_전표세트' (year=2024)
+2026-01-05 10:00:30,259 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑤ 누락된_전표번호' (year=2024)
+2026-01-05 10:00:30,353 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑥ 계정별_3회이하' (year=2024)
+2026-01-05 10:00:30,603 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑦ 사용자별_3회이하' (year=2024)
+2026-01-05 10:00:30,838 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑧ 거래처별_3회이하' (year=2024)
+2026-01-05 10:00:31,360 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑨ 금액_만원단위_0000' (year=2024)
+2026-01-05 10:00:31,641 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑩ 주요인물_거래처명_매칭' (year=2024)
+2026-01-05 10:00:31,641 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑪ 마이너스_금액_분개' (year=2024)
+2026-01-05 10:00:31,784 [INFO] jet_app.jet_core - [run_jet_tests] all queries finished (count=11)
+2026-01-05 10:00:31,819 [INFO] jet_app - [UI] Step 5 완료: result_sets=11
+2026-01-05 10:01:22,438 [INFO] jet_app - [UI] JET run finished (file=(테스트)22-24분개장.csv)
+2026-01-05 10:01:22,438 [INFO] jet_app - [render_results] rendering results for years=[2022, 2023, 2024] (result_sets=11)
+2026-01-05 10:08:50,162 [INFO] jet_app - [UI] JET run requested (file=(테스트)22-24분개장.csv, size=57531744 bytes, person_names=['메디콕스', '싸이토젠', '팍스코', '박준일'])
+2026-01-05 10:08:50,178 [INFO] jet_app - [UI] Step 1: load_csv_to_sqlite 시작
+2026-01-05 10:08:50,178 [INFO] jet_app.jet_core - [load_csv_to_sqlite] start (encoding=utf-8-sig)
+2026-01-05 10:08:51,390 [INFO] jet_app.jet_core - [load_csv_to_sqlite] CSV loaded: rows=275099, cols=18, columns=['회계연도', '전기일', '확정번호', '전표번호', '전표라인번호', '계정코드', '계정명', '차변', '대변', '차대변지시자', '라인적요', '현지통화금액', '공정', '공정명', '사용자', '사용자명', '거래처', '거래처명']
+2026-01-05 10:08:52,741 [INFO] jet_app.jet_core - [load_csv_to_sqlite] success: in-memory DB created, table=journal_entries, rows=275099
+2026-01-05 10:08:52,773 [INFO] jet_app - [UI] Step 1 완료: rows=275099, cols=18, missing_required=[], errors=[]
+2026-01-05 10:08:52,843 [INFO] jet_app.jet_core - [derive_years_from_db] detected years: raw=[2024, 2023, 2022] -> range=[2022, 2023, 2024]
+2026-01-05 10:08:52,843 [INFO] jet_app - [UI] Step 5: run_jet_tests 시작 (years=[2022, 2023, 2024], person_names=['메디콕스', '싸이토젠', '팍스코', '박준일'], min_amount=1000000000)
+2026-01-05 10:08:52,859 [INFO] jet_app.jet_core - [run_jet_tests] start (years=[2022, 2023, 2024], person_names=['메디콕스', '싸이토젠', '팍스코', '박준일'], person_birthdates=None, min_amount=1000000000)
+2026-01-05 10:08:52,859 [INFO] jet_app.jet_core - [run_jet_tests] processing year=2022
+2026-01-05 10:08:52,859 [INFO] jet_app.jet_core - [create_korean_holiday_table] building holiday table for year=2022 -> holiday_2022
+2026-01-05 10:08:52,859 [INFO] jet_app.jet_core - [create_korean_holiday_table] table=holiday_2022 created (rows=118)
+2026-01-05 10:08:52,859 [INFO] jet_app.jet_core - [run_jet_tests] building debug info for year=2022 (prefix=[2022] )
+2026-01-05 10:08:52,943 [INFO] jet_app.jet_core - [get_jet_queries] preparing queries for year=2022, holiday_table=holiday_2022, person_names=['메디콕스', '싸이토젠', '팍스코', '박준일'], min_amount=1000000000
+2026-01-05 10:08:52,943 [INFO] jet_app.jet_core - [get_jet_queries] 11 queries prepared
+2026-01-05 10:08:52,943 [INFO] jet_app.jet_core - [run_jet_tests] running query '① 분기말_휴일_지정금액이상_분개' (year=2022)
+2026-01-05 10:08:53,030 [INFO] jet_app.jet_core - [run_jet_tests] running query '② 적요_조정_포함' (year=2022)
+2026-01-05 10:08:53,108 [INFO] jet_app.jet_core - [run_jet_tests] running query '③ 분기말_수정_적요' (year=2022)
+2026-01-05 10:08:53,187 [INFO] jet_app.jet_core - [run_jet_tests] running query '④ 대차불일치_전표세트' (year=2022)
+2026-01-05 10:08:53,359 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑤ 누락된_전표번호' (year=2022)
+2026-01-05 10:08:53,437 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑥ 계정별_3회이하' (year=2022)
+2026-01-05 10:08:53,718 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑦ 사용자별_3회이하' (year=2022)
+2026-01-05 10:08:53,968 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑧ 거래처별_3회이하' (year=2022)
+2026-01-05 10:08:54,499 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑨ 금액_만원단위_0000' (year=2022)
+2026-01-05 10:08:54,780 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑩ 주요인물_거래처명_매칭' (year=2022)
+2026-01-05 10:08:54,890 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑪ 마이너스_금액_분개' (year=2022)
+2026-01-05 10:08:54,983 [INFO] jet_app.jet_core - [run_jet_tests] processing year=2023
+2026-01-05 10:08:54,983 [INFO] jet_app.jet_core - [create_korean_holiday_table] building holiday table for year=2023 -> holiday_2023
+2026-01-05 10:08:54,983 [INFO] jet_app.jet_core - [create_korean_holiday_table] table=holiday_2023 created (rows=118)
+2026-01-05 10:08:54,983 [INFO] jet_app.jet_core - [run_jet_tests] building debug info for year=2023 (prefix=[2023] )
+2026-01-05 10:08:55,093 [INFO] jet_app.jet_core - [get_jet_queries] preparing queries for year=2023, holiday_table=holiday_2023, person_names=['메디콕스', '싸이토젠', '팍스코', '박준일'], min_amount=1000000000
+2026-01-05 10:08:55,093 [INFO] jet_app.jet_core - [get_jet_queries] 11 queries prepared
+2026-01-05 10:08:55,093 [INFO] jet_app.jet_core - [run_jet_tests] running query '① 분기말_휴일_지정금액이상_분개' (year=2023)
+2026-01-05 10:08:55,171 [INFO] jet_app.jet_core - [run_jet_tests] running query '② 적요_조정_포함' (year=2023)
+2026-01-05 10:08:55,273 [INFO] jet_app.jet_core - [run_jet_tests] running query '③ 분기말_수정_적요' (year=2023)
+2026-01-05 10:08:55,352 [INFO] jet_app.jet_core - [run_jet_tests] running query '④ 대차불일치_전표세트' (year=2023)
+2026-01-05 10:08:55,515 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑤ 누락된_전표번호' (year=2023)
+2026-01-05 10:08:55,593 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑥ 계정별_3회이하' (year=2023)
+2026-01-05 10:08:55,890 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑦ 사용자별_3회이하' (year=2023)
+2026-01-05 10:08:56,124 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑧ 거래처별_3회이하' (year=2023)
+2026-01-05 10:08:56,655 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑨ 금액_만원단위_0000' (year=2023)
+2026-01-05 10:08:56,984 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑩ 주요인물_거래처명_매칭' (year=2023)
+2026-01-05 10:08:57,093 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑪ 마이너스_금액_분개' (year=2023)
+2026-01-05 10:08:57,171 [INFO] jet_app.jet_core - [run_jet_tests] processing year=2024
+2026-01-05 10:08:57,171 [INFO] jet_app.jet_core - [create_korean_holiday_table] building holiday table for year=2024 -> holiday_2024
+2026-01-05 10:08:57,171 [INFO] jet_app.jet_core - [create_korean_holiday_table] table=holiday_2024 created (rows=120)
+2026-01-05 10:08:57,187 [INFO] jet_app.jet_core - [run_jet_tests] building debug info for year=2024 (prefix=[2024] )
+2026-01-05 10:08:57,265 [INFO] jet_app.jet_core - [get_jet_queries] preparing queries for year=2024, holiday_table=holiday_2024, person_names=['메디콕스', '싸이토젠', '팍스코', '박준일'], min_amount=1000000000
+2026-01-05 10:08:57,265 [INFO] jet_app.jet_core - [get_jet_queries] 11 queries prepared
+2026-01-05 10:08:57,280 [INFO] jet_app.jet_core - [run_jet_tests] running query '① 분기말_휴일_지정금액이상_분개' (year=2024)
+2026-01-05 10:08:57,343 [INFO] jet_app.jet_core - [run_jet_tests] running query '② 적요_조정_포함' (year=2024)
+2026-01-05 10:08:57,423 [INFO] jet_app.jet_core - [run_jet_tests] running query '③ 분기말_수정_적요' (year=2024)
+2026-01-05 10:08:57,515 [INFO] jet_app.jet_core - [run_jet_tests] running query '④ 대차불일치_전표세트' (year=2024)
+2026-01-05 10:08:57,655 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑤ 누락된_전표번호' (year=2024)
+2026-01-05 10:08:57,765 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑥ 계정별_3회이하' (year=2024)
+2026-01-05 10:08:58,015 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑦ 사용자별_3회이하' (year=2024)
+2026-01-05 10:08:58,281 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑧ 거래처별_3회이하' (year=2024)
+2026-01-05 10:08:58,839 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑨ 금액_만원단위_0000' (year=2024)
+2026-01-05 10:08:59,140 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑩ 주요인물_거래처명_매칭' (year=2024)
+2026-01-05 10:08:59,265 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑪ 마이너스_금액_분개' (year=2024)
+2026-01-05 10:08:59,406 [INFO] jet_app.jet_core - [run_jet_tests] all queries finished (count=11)
+2026-01-05 10:08:59,453 [INFO] jet_app - [UI] Step 5 완료: result_sets=11
+2026-01-05 10:09:53,043 [INFO] jet_app - [UI] JET run finished (file=(테스트)22-24분개장.csv)
+2026-01-05 10:09:53,043 [INFO] jet_app - [render_results] rendering results for years=[2022, 2023, 2024] (result_sets=11)
+2026-01-05 10:11:30,723 [INFO] jet_app - [render_results] rendering results for years=[2022, 2023, 2024] (result_sets=11)
+2026-01-05 10:11:32,210 [INFO] jet_app - [render_results] rendering results for years=[2022, 2023, 2024] (result_sets=11)
+2026-01-05 10:11:34,463 [INFO] jet_app - [render_results] rendering results for years=[2022, 2023, 2024] (result_sets=11)
+2026-01-05 10:11:40,113 [INFO] jet_app - [render_results] rendering results for years=[2022, 2023, 2024] (result_sets=11)
+2026-01-05 10:11:41,289 [INFO] jet_app - [render_results] rendering results for years=[2022, 2023, 2024] (result_sets=11)
+2026-01-05 10:27:08,132 [INFO] jet_app - [render_results] rendering results for years=[2022, 2023, 2024] (result_sets=11)
+2026-01-05 10:27:11,228 [INFO] jet_app - [UI] JET run requested (file=(테스트1) 2-4. 2024년 별도 분개장.csv, size=24864883 bytes, person_names=['메디콕스', '싸이토젠', '팍스코', '박준일'])
+2026-01-05 10:27:11,244 [INFO] jet_app - [UI] Step 1: load_csv_to_sqlite 시작
+2026-01-05 10:27:11,244 [INFO] jet_app.jet_core - [load_csv_to_sqlite] start (encoding=utf-8-sig)
+2026-01-05 10:27:11,728 [INFO] jet_app.jet_core - [load_csv_to_sqlite] CSV loaded: rows=117672, cols=18, columns=['회계연도', '전기일', '확정번호', '전표번호', '전표라인번호', '계정코드', '계정명', '차변', '대변', '차대변지시자', '현지통화금액', '라인적요', '공정', '공정명', '사용자', '사용자명', '거래처', '거래처명']
+2026-01-05 10:27:12,352 [INFO] jet_app.jet_core - [load_csv_to_sqlite] success: in-memory DB created, table=journal_entries, rows=117672
+2026-01-05 10:27:12,370 [INFO] jet_app - [UI] Step 1 완료: rows=117672, cols=18, missing_required=[], errors=[]
+2026-01-05 10:27:12,417 [INFO] jet_app.jet_core - [derive_years_from_db] detected years: raw=[2024] -> range=[2024]
+2026-01-05 10:27:12,417 [INFO] jet_app - [UI] Step 5: run_jet_tests 시작 (years=[2024], person_names=['메디콕스', '싸이토젠', '팍스코', '박준일'], min_amount=1000000000)
+2026-01-05 10:27:12,433 [INFO] jet_app.jet_core - [run_jet_tests] start (years=[2024], person_names=['메디콕스', '싸이토젠', '팍스코', '박준일'], person_birthdates=None, min_amount=1000000000)
+2026-01-05 10:27:12,433 [INFO] jet_app.jet_core - [run_jet_tests] processing year=2024
+2026-01-05 10:27:12,433 [INFO] jet_app.jet_core - [create_korean_holiday_table] building holiday table for year=2024 -> holiday_2024
+2026-01-05 10:27:12,433 [INFO] jet_app.jet_core - [create_korean_holiday_table] table=holiday_2024 created (rows=120)
+2026-01-05 10:27:12,433 [INFO] jet_app.jet_core - [run_jet_tests] building debug info for year=2024 (prefix=[2024] )
+2026-01-05 10:27:12,495 [INFO] jet_app.jet_core - [get_jet_queries] preparing queries for year=2024, holiday_table=holiday_2024, person_names=['메디콕스', '싸이토젠', '팍스코', '박준일'], min_amount=1000000000
+2026-01-05 10:27:12,495 [INFO] jet_app.jet_core - [get_jet_queries] 11 queries prepared
+2026-01-05 10:27:12,495 [INFO] jet_app.jet_core - [run_jet_tests] running query '① 분기말_휴일_지정금액이상_분개' (year=2024)
+2026-01-05 10:27:12,542 [INFO] jet_app.jet_core - [run_jet_tests] running query '② 적요_조정_포함' (year=2024)
+2026-01-05 10:27:12,573 [INFO] jet_app.jet_core - [run_jet_tests] running query '③ 분기말_수정_적요' (year=2024)
+2026-01-05 10:27:12,605 [INFO] jet_app.jet_core - [run_jet_tests] running query '④ 대차불일치_전표세트' (year=2024)
+2026-01-05 10:27:12,667 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑤ 누락된_전표번호' (year=2024)
+2026-01-05 10:27:12,714 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑥ 계정별_3회이하' (year=2024)
+2026-01-05 10:27:12,823 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑦ 사용자별_3회이하' (year=2024)
+2026-01-05 10:27:12,916 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑧ 거래처별_3회이하' (year=2024)
+2026-01-05 10:27:13,135 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑨ 금액_만원단위_0000' (year=2024)
+2026-01-05 10:27:13,260 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑩ 주요인물_거래처명_매칭' (year=2024)
+2026-01-05 10:27:13,307 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑪ 마이너스_금액_분개' (year=2024)
+2026-01-05 10:27:13,354 [INFO] jet_app.jet_core - [run_jet_tests] all queries finished (count=11)
+2026-01-05 10:27:13,354 [INFO] jet_app - [UI] Step 5 완료: result_sets=11
+2026-01-05 10:27:20,518 [INFO] jet_app - [UI] ④번 전표번호별 상세 데이터 준비 중...
+2026-01-05 10:27:20,550 [INFO] jet_app - [UI] ④번 전표번호별 상세 데이터 준비 완료: 2개
+2026-01-05 10:27:20,612 [INFO] jet_app - [UI] JET run finished (file=(테스트1) 2-4. 2024년 별도 분개장.csv)
+2026-01-05 10:27:20,612 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-05 10:27:28,467 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-05 10:39:20,062 [INFO] jet_app - [UI] JET run requested (file=(테스트1) 2-4. 2024년 별도 분개장.csv, size=24864883 bytes, person_names=['메디콕스', '싸이토젠', '우리은행'])
+2026-01-05 10:39:20,078 [INFO] jet_app - [UI] Step 1: load_csv_to_sqlite 시작
+2026-01-05 10:39:20,078 [INFO] jet_app.jet_core - [load_csv_to_sqlite] start (encoding=utf-8-sig)
+2026-01-05 10:39:20,662 [INFO] jet_app.jet_core - [load_csv_to_sqlite] CSV loaded: rows=117672, cols=18, columns=['회계연도', '전기일', '확정번호', '전표번호', '전표라인번호', '계정코드', '계정명', '차변', '대변', '차대변지시자', '현지통화금액', '라인적요', '공정', '공정명', '사용자', '사용자명', '거래처', '거래처명']
+2026-01-05 10:39:21,206 [INFO] jet_app.jet_core - [load_csv_to_sqlite] success: in-memory DB created, table=journal_entries, rows=117672
+2026-01-05 10:39:21,221 [INFO] jet_app - [UI] Step 1 완료: rows=117672, cols=18, missing_required=[], errors=[]
+2026-01-05 10:39:21,252 [INFO] jet_app.jet_core - [derive_years_from_db] detected years: raw=[2024] -> range=[2024]
+2026-01-05 10:39:21,268 [INFO] jet_app - [UI] Step 5: run_jet_tests 시작 (years=[2024], person_names=['메디콕스', '싸이토젠', '우리은행'], min_amount=1000000000)
+2026-01-05 10:39:21,268 [INFO] jet_app.jet_core - [run_jet_tests] start (years=[2024], person_names=['메디콕스', '싸이토젠', '우리은행'], person_birthdates=None, min_amount=1000000000)
+2026-01-05 10:39:21,268 [INFO] jet_app.jet_core - [run_jet_tests] processing year=2024
+2026-01-05 10:39:21,268 [INFO] jet_app.jet_core - [create_korean_holiday_table] building holiday table for year=2024 -> holiday_2024
+2026-01-05 10:39:21,284 [INFO] jet_app.jet_core - [create_korean_holiday_table] table=holiday_2024 created (rows=120)
+2026-01-05 10:39:21,284 [INFO] jet_app.jet_core - [run_jet_tests] building debug info for year=2024 (prefix=[2024] )
+2026-01-05 10:39:21,334 [INFO] jet_app.jet_core - [get_jet_queries] preparing queries for year=2024, holiday_table=holiday_2024, person_names=['메디콕스', '싸이토젠', '우리은행'], min_amount=1000000000
+2026-01-05 10:39:21,334 [INFO] jet_app.jet_core - [get_jet_queries] 11 queries prepared
+2026-01-05 10:39:21,334 [INFO] jet_app.jet_core - [run_jet_tests] running query '① 분기말_휴일_지정금액이상_분개' (year=2024)
+2026-01-05 10:39:21,366 [INFO] jet_app.jet_core - [run_jet_tests] running query '② 적요_조정_포함' (year=2024)
+2026-01-05 10:39:21,397 [INFO] jet_app.jet_core - [run_jet_tests] running query '③ 분기말_수정_적요' (year=2024)
+2026-01-05 10:39:21,428 [INFO] jet_app.jet_core - [run_jet_tests] running query '④ 대차불일치_전표세트' (year=2024)
+2026-01-05 10:39:21,491 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑤ 누락된_전표번호' (year=2024)
+2026-01-05 10:39:21,538 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑥ 계정별_3회이하' (year=2024)
+2026-01-05 10:39:21,631 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑦ 사용자별_3회이하' (year=2024)
+2026-01-05 10:39:21,725 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑧ 거래처별_3회이하' (year=2024)
+2026-01-05 10:39:21,943 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑨ 금액_만원단위_0000' (year=2024)
+2026-01-05 10:39:22,058 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑩ 주요인물_거래처명_매칭' (year=2024)
+2026-01-05 10:39:22,105 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑪ 마이너스_금액_분개' (year=2024)
+2026-01-05 10:39:22,136 [INFO] jet_app.jet_core - [run_jet_tests] all queries finished (count=11)
+2026-01-05 10:39:22,136 [INFO] jet_app - [UI] Step 5 완료: result_sets=11
+2026-01-05 10:39:29,074 [INFO] jet_app - [UI] ④번 전표번호별 상세 데이터 준비 중...
+2026-01-05 10:39:29,105 [INFO] jet_app - [UI] ④번 전표번호별 상세 데이터 준비 완료: 2개
+2026-01-05 10:39:29,152 [INFO] jet_app - [UI] JET run finished (file=(테스트1) 2-4. 2024년 별도 분개장.csv)
+2026-01-05 10:39:29,168 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-05 10:39:43,839 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-05 10:39:45,269 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-05 10:39:45,715 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-05 10:39:46,736 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-05 10:39:48,916 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-05 10:39:49,330 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-05 10:39:50,394 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-05 10:47:22,913 [INFO] jet_app - [UI] JET run requested (file=(테스트)22-24분개장.csv, size=57531744 bytes, person_names=[])
+2026-01-05 10:47:22,928 [INFO] jet_app - [UI] Step 1: load_csv_to_sqlite 시작
+2026-01-05 10:47:22,928 [INFO] jet_app.jet_core - [load_csv_to_sqlite] start (encoding=utf-8-sig)
+2026-01-05 10:47:24,116 [INFO] jet_app.jet_core - [load_csv_to_sqlite] CSV loaded: rows=275099, cols=18, columns=['회계연도', '전기일', '확정번호', '전표번호', '전표라인번호', '계정코드', '계정명', '차변', '대변', '차대변지시자', '라인적용', '현지통화금액', '공정', '공정명', '사용자', '사용자명', '거래처', '거래처명']
+2026-01-05 10:47:24,568 [ERROR] jet_app.jet_core - [load_csv_to_sqlite] validation failed: 누락된 필수 컬럼: 라인적요
+2026-01-05 10:47:24,599 [INFO] jet_app - [UI] Step 1 완료: rows=275099, cols=18, missing_required=['라인적요'], errors=['누락된 필수 컬럼: 라인적요']
+2026-01-05 10:47:24,599 [ERROR] jet_app - [UI] CSV 구조 오류로 JET 실행 중단: 누락된 필수 컬럼: 라인적요
+2026-01-05 10:47:24,740 [INFO] jet_app - [UI] JET run finished (file=(테스트)22-24분개장.csv)
+2026-01-05 10:50:00,664 [INFO] jet_app - [UI] JET run requested (file=2023년 분개장2(1).csv, size=28740618 bytes, person_names=[])
+2026-01-05 10:50:00,664 [INFO] jet_app - [UI] Step 1: load_csv_to_sqlite 시작
+2026-01-05 10:50:00,664 [INFO] jet_app.jet_core - [load_csv_to_sqlite] start (encoding=utf-8-sig)
+2026-01-05 10:50:01,406 [INFO] jet_app.jet_core - [load_csv_to_sqlite] CSV loaded: rows=98989, cols=35, columns=['Unnamed: 0', '회계연도', '전기일', '확정번호', '전표번호', '전표라인번호', '계정코드', '계정명', '차변', '대변', '차대변지시자', '현지통화금액', '라인적요', '공정', '공정명', '사용자', '사용자명', '거래처', '거래처명', '카드번호', '카드구분', '은행', '은행명', '과제', '과제명', '과제계정', '과제계정명', '부가세구분', '부가세명', '전자구분', '과세금액', '부가세금액', '전표일자', '확정자명', 'AE']
+2026-01-05 10:50:02,299 [INFO] jet_app.jet_core - [load_csv_to_sqlite] success: in-memory DB created, table=journal_entries, rows=98989
+2026-01-05 10:50:02,314 [INFO] jet_app - [UI] Step 1 완료: rows=98989, cols=35, missing_required=[], errors=[]
+2026-01-05 10:50:02,361 [INFO] jet_app.jet_core - [derive_years_from_db] detected years: raw=[2023] -> range=[2023]
+2026-01-05 10:50:02,361 [INFO] jet_app - [UI] Step 5: run_jet_tests 시작 (years=[2023], person_names=[], min_amount=1000000000)
+2026-01-05 10:50:02,361 [INFO] jet_app.jet_core - [run_jet_tests] start (years=[2023], person_names=None, person_birthdates=None, min_amount=1000000000)
+2026-01-05 10:50:02,361 [INFO] jet_app.jet_core - [run_jet_tests] processing year=2023
+2026-01-05 10:50:02,377 [INFO] jet_app.jet_core - [create_korean_holiday_table] building holiday table for year=2023 -> holiday_2023
+2026-01-05 10:50:02,377 [INFO] jet_app.jet_core - [create_korean_holiday_table] table=holiday_2023 created (rows=118)
+2026-01-05 10:50:02,377 [INFO] jet_app.jet_core - [run_jet_tests] building debug info for year=2023 (prefix=[2023] )
+2026-01-05 10:50:02,424 [INFO] jet_app.jet_core - [get_jet_queries] preparing queries for year=2023, holiday_table=holiday_2023, person_names=None, min_amount=1000000000
+2026-01-05 10:50:02,424 [INFO] jet_app.jet_core - [get_jet_queries] 11 queries prepared
+2026-01-05 10:50:02,424 [INFO] jet_app.jet_core - [run_jet_tests] running query '① 분기말_휴일_지정금액이상_분개' (year=2023)
+2026-01-05 10:50:02,455 [INFO] jet_app.jet_core - [run_jet_tests] running query '② 적요_조정_포함' (year=2023)
+2026-01-05 10:50:02,502 [INFO] jet_app.jet_core - [run_jet_tests] running query '③ 분기말_수정_적요' (year=2023)
+2026-01-05 10:50:02,533 [INFO] jet_app.jet_core - [run_jet_tests] running query '④ 대차불일치_전표세트' (year=2023)
+2026-01-05 10:50:02,596 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑤ 누락된_전표번호' (year=2023)
+2026-01-05 10:50:02,627 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑥ 계정별_3회이하' (year=2023)
+2026-01-05 10:50:02,721 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑦ 사용자별_3회이하' (year=2023)
+2026-01-05 10:50:02,814 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑧ 거래처별_3회이하' (year=2023)
+2026-01-05 10:50:03,064 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑨ 금액_만원단위_0000' (year=2023)
+2026-01-05 10:50:03,209 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑩ 주요인물_거래처명_매칭' (year=2023)
+2026-01-05 10:50:03,209 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑪ 마이너스_금액_분개' (year=2023)
+2026-01-05 10:50:03,256 [INFO] jet_app.jet_core - [run_jet_tests] all queries finished (count=11)
+2026-01-05 10:50:03,256 [INFO] jet_app - [UI] Step 5 완료: result_sets=11
+2026-01-05 10:50:14,237 [INFO] jet_app - [UI] JET run finished (file=2023년 분개장2(1).csv)
+2026-01-05 10:50:14,237 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:54:11,571 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:54:11,805 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:54:15,891 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:54:16,048 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:54:20,214 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:54:20,431 [INFO] jet_app - [UI] JET run requested (file=2023년 분개장2(1).csv, size=28740618 bytes, person_names=['메디콕스', '싸이토젠', '우리은행'])
+2026-01-05 10:54:20,433 [INFO] jet_app - [UI] Step 1: load_csv_to_sqlite 시작
+2026-01-05 10:54:20,433 [INFO] jet_app.jet_core - [load_csv_to_sqlite] start (encoding=utf-8-sig)
+2026-01-05 10:54:21,255 [INFO] jet_app.jet_core - [load_csv_to_sqlite] CSV loaded: rows=98989, cols=35, columns=['Unnamed: 0', '회계연도', '전기일', '확정번호', '전표번호', '전표라인번호', '계정코드', '계정명', '차변', '대변', '차대변지시자', '현지통화금액', '라인적요', '공정', '공정명', '사용자', '사용자명', '거래처', '거래처명', '카드번호', '카드구분', '은행', '은행명', '과제', '과제명', '과제계정', '과제계정명', '부가세구분', '부가세명', '전자구분', '과세금액', '부가세금액', '전표일자', '확정자명', 'AE']
+2026-01-05 10:54:22,167 [INFO] jet_app.jet_core - [load_csv_to_sqlite] success: in-memory DB created, table=journal_entries, rows=98989
+2026-01-05 10:54:22,183 [INFO] jet_app - [UI] Step 1 완료: rows=98989, cols=35, missing_required=[], errors=[]
+2026-01-05 10:54:22,214 [INFO] jet_app.jet_core - [derive_years_from_db] detected years: raw=[2023] -> range=[2023]
+2026-01-05 10:54:22,230 [INFO] jet_app - [UI] Step 5: run_jet_tests 시작 (years=[2023], person_names=['메디콕스', '싸이토젠', '우리은행'], min_amount=1000000000)
+2026-01-05 10:54:22,230 [INFO] jet_app.jet_core - [run_jet_tests] start (years=[2023], person_names=['메디콕스', '싸이토젠', '우리은행'], person_birthdates=None, min_amount=1000000000)
+2026-01-05 10:54:22,230 [INFO] jet_app.jet_core - [run_jet_tests] processing year=2023
+2026-01-05 10:54:22,230 [INFO] jet_app.jet_core - [create_korean_holiday_table] building holiday table for year=2023 -> holiday_2023
+2026-01-05 10:54:22,245 [INFO] jet_app.jet_core - [create_korean_holiday_table] table=holiday_2023 created (rows=118)
+2026-01-05 10:54:22,245 [INFO] jet_app.jet_core - [run_jet_tests] building debug info for year=2023 (prefix=[2023] )
+2026-01-05 10:54:22,277 [INFO] jet_app.jet_core - [get_jet_queries] preparing queries for year=2023, holiday_table=holiday_2023, person_names=['메디콕스', '싸이토젠', '우리은행'], min_amount=1000000000
+2026-01-05 10:54:22,292 [INFO] jet_app.jet_core - [get_jet_queries] 11 queries prepared
+2026-01-05 10:54:22,292 [INFO] jet_app.jet_core - [run_jet_tests] running query '① 분기말_휴일_지정금액이상_분개' (year=2023)
+2026-01-05 10:54:22,324 [INFO] jet_app.jet_core - [run_jet_tests] running query '② 적요_조정_포함' (year=2023)
+2026-01-05 10:54:22,355 [INFO] jet_app.jet_core - [run_jet_tests] running query '③ 분기말_수정_적요' (year=2023)
+2026-01-05 10:54:22,402 [INFO] jet_app.jet_core - [run_jet_tests] running query '④ 대차불일치_전표세트' (year=2023)
+2026-01-05 10:54:22,460 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑤ 누락된_전표번호' (year=2023)
+2026-01-05 10:54:22,496 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑥ 계정별_3회이하' (year=2023)
+2026-01-05 10:54:22,590 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑦ 사용자별_3회이하' (year=2023)
+2026-01-05 10:54:22,699 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑧ 거래처별_3회이하' (year=2023)
+2026-01-05 10:54:22,924 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑨ 금액_만원단위_0000' (year=2023)
+2026-01-05 10:54:23,081 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑩ 주요인물_거래처명_매칭' (year=2023)
+2026-01-05 10:54:23,144 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑪ 마이너스_금액_분개' (year=2023)
+2026-01-05 10:54:23,175 [INFO] jet_app.jet_core - [run_jet_tests] all queries finished (count=11)
+2026-01-05 10:54:23,191 [INFO] jet_app - [UI] Step 5 완료: result_sets=11
+2026-01-05 10:54:34,346 [INFO] jet_app - [UI] JET run finished (file=2023년 분개장2(1).csv)
+2026-01-05 10:54:34,362 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:03,188 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:04,376 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:05,034 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:05,969 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:07,882 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:08,885 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:10,778 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:11,254 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:12,600 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:13,772 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:14,589 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:15,269 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:16,535 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:17,399 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:17,839 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:18,374 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:18,929 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:21,178 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:22,354 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:25,644 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:26,607 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:29,532 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:30,065 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:31,753 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:32,695 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:34,423 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:35,693 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:37,084 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:45,026 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:46,438 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:48,783 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:49,775 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:50,353 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:52,485 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:54,089 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:54,646 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:55,090 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:55,762 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:57,106 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:58,942 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:59,474 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:55:59,928 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:56:00,414 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 10:57:21,898 [INFO] jet_app - [UI] JET run requested (file=(테스트)22-24분개장.csv, size=57531744 bytes, person_names=['싸이토젠', '메디콕스', '팍스코', '박준일', '최시명'])
+2026-01-05 10:57:21,913 [INFO] jet_app - [UI] Step 1: load_csv_to_sqlite 시작
+2026-01-05 10:57:21,913 [INFO] jet_app.jet_core - [load_csv_to_sqlite] start (encoding=utf-8-sig)
+2026-01-05 10:57:23,117 [INFO] jet_app.jet_core - [load_csv_to_sqlite] CSV loaded: rows=275099, cols=18, columns=['회계연도', '전기일', '확정번호', '전표번호', '전표라인번호', '계정코드', '계정명', '차변', '대변', '차대변지시자', '라인적요', '현지통화금액', '공정', '공정명', '사용자', '사용자명', '거래처', '거래처명']
+2026-01-05 10:57:24,465 [INFO] jet_app.jet_core - [load_csv_to_sqlite] success: in-memory DB created, table=journal_entries, rows=275099
+2026-01-05 10:57:24,496 [INFO] jet_app - [UI] Step 1 완료: rows=275099, cols=18, missing_required=[], errors=[]
+2026-01-05 10:57:24,559 [INFO] jet_app.jet_core - [derive_years_from_db] detected years: raw=[2024, 2023, 2022] -> range=[2022, 2023, 2024]
+2026-01-05 10:57:24,559 [INFO] jet_app - [UI] Step 5: run_jet_tests 시작 (years=[2022, 2023, 2024], person_names=['싸이토젠', '메디콕스', '팍스코', '박준일', '최시명'], min_amount=1000000000)
+2026-01-05 10:57:24,575 [INFO] jet_app.jet_core - [run_jet_tests] start (years=[2022, 2023, 2024], person_names=['싸이토젠', '메디콕스', '팍스코', '박준일', '최시명'], person_birthdates=None, min_amount=1000000000)
+2026-01-05 10:57:24,575 [INFO] jet_app.jet_core - [run_jet_tests] processing year=2022
+2026-01-05 10:57:24,575 [INFO] jet_app.jet_core - [create_korean_holiday_table] building holiday table for year=2022 -> holiday_2022
+2026-01-05 10:57:24,590 [INFO] jet_app.jet_core - [create_korean_holiday_table] table=holiday_2022 created (rows=118)
+2026-01-05 10:57:24,590 [INFO] jet_app.jet_core - [run_jet_tests] building debug info for year=2022 (prefix=[2022] )
+2026-01-05 10:57:24,700 [INFO] jet_app.jet_core - [get_jet_queries] preparing queries for year=2022, holiday_table=holiday_2022, person_names=['싸이토젠', '메디콕스', '팍스코', '박준일', '최시명'], min_amount=1000000000
+2026-01-05 10:57:24,700 [INFO] jet_app.jet_core - [get_jet_queries] 11 queries prepared
+2026-01-05 10:57:24,700 [INFO] jet_app.jet_core - [run_jet_tests] running query '① 분기말_휴일_지정금액이상_분개' (year=2022)
+2026-01-05 10:57:24,778 [INFO] jet_app.jet_core - [run_jet_tests] running query '② 적요_조정_포함' (year=2022)
+2026-01-05 10:57:24,871 [INFO] jet_app.jet_core - [run_jet_tests] running query '③ 분기말_수정_적요' (year=2022)
+2026-01-05 10:57:24,965 [INFO] jet_app.jet_core - [run_jet_tests] running query '④ 대차불일치_전표세트' (year=2022)
+2026-01-05 10:57:25,106 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑤ 누락된_전표번호' (year=2022)
+2026-01-05 10:57:25,205 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑥ 계정별_3회이하' (year=2022)
+2026-01-05 10:57:25,455 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑦ 사용자별_3회이하' (year=2022)
+2026-01-05 10:57:25,693 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑧ 거래처별_3회이하' (year=2022)
+2026-01-05 10:57:26,231 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑨ 금액_만원단위_0000' (year=2022)
+2026-01-05 10:57:26,503 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑩ 주요인물_거래처명_매칭' (year=2022)
+2026-01-05 10:57:26,628 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑪ 마이너스_금액_분개' (year=2022)
+2026-01-05 10:57:26,706 [INFO] jet_app.jet_core - [run_jet_tests] processing year=2023
+2026-01-05 10:57:26,722 [INFO] jet_app.jet_core - [create_korean_holiday_table] building holiday table for year=2023 -> holiday_2023
+2026-01-05 10:57:26,722 [INFO] jet_app.jet_core - [create_korean_holiday_table] table=holiday_2023 created (rows=118)
+2026-01-05 10:57:26,722 [INFO] jet_app.jet_core - [run_jet_tests] building debug info for year=2023 (prefix=[2023] )
+2026-01-05 10:57:26,831 [INFO] jet_app.jet_core - [get_jet_queries] preparing queries for year=2023, holiday_table=holiday_2023, person_names=['싸이토젠', '메디콕스', '팍스코', '박준일', '최시명'], min_amount=1000000000
+2026-01-05 10:57:26,831 [INFO] jet_app.jet_core - [get_jet_queries] 11 queries prepared
+2026-01-05 10:57:26,831 [INFO] jet_app.jet_core - [run_jet_tests] running query '① 분기말_휴일_지정금액이상_분개' (year=2023)
+2026-01-05 10:57:26,909 [INFO] jet_app.jet_core - [run_jet_tests] running query '② 적요_조정_포함' (year=2023)
+2026-01-05 10:57:26,994 [INFO] jet_app.jet_core - [run_jet_tests] running query '③ 분기말_수정_적요' (year=2023)
+2026-01-05 10:57:27,073 [INFO] jet_app.jet_core - [run_jet_tests] running query '④ 대차불일치_전표세트' (year=2023)
+2026-01-05 10:57:27,237 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑤ 누락된_전표번호' (year=2023)
+2026-01-05 10:57:27,316 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑥ 계정별_3회이하' (year=2023)
+2026-01-05 10:57:27,597 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑦ 사용자별_3회이하' (year=2023)
+2026-01-05 10:57:27,831 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑧ 거래처별_3회이하' (year=2023)
+2026-01-05 10:57:28,362 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑨ 금액_만원단위_0000' (year=2023)
+2026-01-05 10:57:28,628 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑩ 주요인물_거래처명_매칭' (year=2023)
+2026-01-05 10:57:28,737 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑪ 마이너스_금액_분개' (year=2023)
+2026-01-05 10:57:28,839 [INFO] jet_app.jet_core - [run_jet_tests] processing year=2024
+2026-01-05 10:57:28,855 [INFO] jet_app.jet_core - [create_korean_holiday_table] building holiday table for year=2024 -> holiday_2024
+2026-01-05 10:57:28,855 [INFO] jet_app.jet_core - [create_korean_holiday_table] table=holiday_2024 created (rows=120)
+2026-01-05 10:57:28,855 [INFO] jet_app.jet_core - [run_jet_tests] building debug info for year=2024 (prefix=[2024] )
+2026-01-05 10:57:28,948 [INFO] jet_app.jet_core - [get_jet_queries] preparing queries for year=2024, holiday_table=holiday_2024, person_names=['싸이토젠', '메디콕스', '팍스코', '박준일', '최시명'], min_amount=1000000000
+2026-01-05 10:57:28,948 [INFO] jet_app.jet_core - [get_jet_queries] 11 queries prepared
+2026-01-05 10:57:28,948 [INFO] jet_app.jet_core - [run_jet_tests] running query '① 분기말_휴일_지정금액이상_분개' (year=2024)
+2026-01-05 10:57:29,027 [INFO] jet_app.jet_core - [run_jet_tests] running query '② 적요_조정_포함' (year=2024)
+2026-01-05 10:57:29,105 [INFO] jet_app.jet_core - [run_jet_tests] running query '③ 분기말_수정_적요' (year=2024)
+2026-01-05 10:57:29,189 [INFO] jet_app.jet_core - [run_jet_tests] running query '④ 대차불일치_전표세트' (year=2024)
+2026-01-05 10:57:29,360 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑤ 누락된_전표번호' (year=2024)
+2026-01-05 10:57:29,439 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑥ 계정별_3회이하' (year=2024)
+2026-01-05 10:57:29,707 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑦ 사용자별_3회이하' (year=2024)
+2026-01-05 10:57:29,964 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑧ 거래처별_3회이하' (year=2024)
+2026-01-05 10:57:30,511 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑨ 금액_만원단위_0000' (year=2024)
+2026-01-05 10:57:30,784 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑩ 주요인물_거래처명_매칭' (year=2024)
+2026-01-05 10:57:30,893 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑪ 마이너스_금액_분개' (year=2024)
+2026-01-05 10:57:31,002 [INFO] jet_app.jet_core - [run_jet_tests] all queries finished (count=11)
+2026-01-05 10:57:31,034 [INFO] jet_app - [UI] Step 5 완료: result_sets=11
+2026-01-05 10:58:21,428 [INFO] jet_app - [UI] JET run finished (file=(테스트)22-24분개장.csv)
+2026-01-05 10:58:21,428 [INFO] jet_app - [render_results] rendering results for years=[2022, 2023, 2024] (result_sets=11)
+2026-01-05 10:59:15,947 [INFO] jet_app - [render_results] rendering results for years=[2022, 2023, 2024] (result_sets=11)
+2026-01-05 10:59:19,299 [INFO] jet_app - [render_results] rendering results for years=[2022, 2023, 2024] (result_sets=11)
+2026-01-05 10:59:19,768 [INFO] jet_app - [render_results] rendering results for years=[2022, 2023, 2024] (result_sets=11)
+2026-01-05 10:59:20,901 [INFO] jet_app - [render_results] rendering results for years=[2022, 2023, 2024] (result_sets=11)
+2026-01-05 10:59:31,715 [INFO] jet_app - [render_results] rendering results for years=[2022, 2023, 2024] (result_sets=11)
+2026-01-05 11:28:49,896 [WARNING] jet_app - [UI] run_button clicked without file upload
+2026-01-05 11:29:01,139 [INFO] jet_app - [UI] JET run requested (file=2023년 분개장2(1).csv, size=28740618 bytes, person_names=['싸이토젠'])
+2026-01-05 11:29:01,139 [INFO] jet_app - [UI] Step 1: load_csv_to_sqlite 시작
+2026-01-05 11:29:01,139 [INFO] jet_app.jet_core - [load_csv_to_sqlite] start (encoding=utf-8-sig)
+2026-01-05 11:29:01,866 [INFO] jet_app.jet_core - [load_csv_to_sqlite] CSV loaded: rows=98989, cols=35, columns=['Unnamed: 0', '회계연도', '전기일', '확정번호', '전표번호', '전표라인번호', '계정코드', '계정명', '차변', '대변', '차대변지시자', '현지통화금액', '라인적요', '공정', '공정명', '사용자', '사용자명', '거래처', '거래처명', '카드번호', '카드구분', '은행', '은행명', '과제', '과제명', '과제계정', '과제계정명', '부가세구분', '부가세명', '전자구분', '과세금액', '부가세금액', '전표일자', '확정자명', 'AE']
+2026-01-05 11:29:02,772 [INFO] jet_app.jet_core - [load_csv_to_sqlite] success: in-memory DB created, table=journal_entries, rows=98989
+2026-01-05 11:29:02,788 [INFO] jet_app - [UI] Step 1 완료: rows=98989, cols=35, missing_required=[], errors=[]
+2026-01-05 11:29:02,835 [INFO] jet_app.jet_core - [derive_years_from_db] detected years: raw=[2023] -> range=[2023]
+2026-01-05 11:29:02,835 [INFO] jet_app - [UI] Step 5: run_jet_tests 시작 (years=[2023], person_names=['싸이토젠'], min_amount=1000000000)
+2026-01-05 11:29:02,835 [INFO] jet_app.jet_core - [run_jet_tests] start (years=[2023], person_names=['싸이토젠'], person_birthdates=None, min_amount=1000000000)
+2026-01-05 11:29:02,835 [INFO] jet_app.jet_core - [run_jet_tests] processing year=2023
+2026-01-05 11:29:02,851 [INFO] jet_app.jet_core - [create_korean_holiday_table] building holiday table for year=2023 -> holiday_2023
+2026-01-05 11:29:02,851 [INFO] jet_app.jet_core - [create_korean_holiday_table] table=holiday_2023 created (rows=118)
+2026-01-05 11:29:02,851 [INFO] jet_app.jet_core - [run_jet_tests] building debug info for year=2023 (prefix=[2023] )
+2026-01-05 11:29:02,899 [INFO] jet_app.jet_core - [get_jet_queries] preparing queries for year=2023, holiday_table=holiday_2023, person_names=['싸이토젠'], min_amount=1000000000
+2026-01-05 11:29:02,902 [INFO] jet_app.jet_core - [get_jet_queries] 11 queries prepared
+2026-01-05 11:29:02,902 [INFO] jet_app.jet_core - [run_jet_tests] running query '① 분기말_휴일_지정금액이상_분개' (year=2023)
+2026-01-05 11:29:02,933 [INFO] jet_app.jet_core - [run_jet_tests] running query '② 적요_조정_포함' (year=2023)
+2026-01-05 11:29:02,980 [INFO] jet_app.jet_core - [run_jet_tests] running query '③ 분기말_수정_적요' (year=2023)
+2026-01-05 11:29:03,011 [INFO] jet_app.jet_core - [run_jet_tests] running query '④ 대차불일치_전표세트' (year=2023)
+2026-01-05 11:29:03,074 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑤ 누락된_전표번호' (year=2023)
+2026-01-05 11:29:03,105 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑥ 계정별_3회이하' (year=2023)
+2026-01-05 11:29:03,199 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑦ 사용자별_3회이하' (year=2023)
+2026-01-05 11:29:03,308 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑧ 거래처별_3회이하' (year=2023)
+2026-01-05 11:29:03,543 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑨ 금액_만원단위_0000' (year=2023)
+2026-01-05 11:29:03,689 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑩ 주요인물_거래처명_매칭' (year=2023)
+2026-01-05 11:29:03,736 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑪ 마이너스_금액_분개' (year=2023)
+2026-01-05 11:29:03,782 [INFO] jet_app.jet_core - [run_jet_tests] all queries finished (count=11)
+2026-01-05 11:29:03,782 [INFO] jet_app - [UI] Step 5 완료: result_sets=11
+2026-01-05 11:29:15,112 [INFO] jet_app - [UI] JET run finished (file=2023년 분개장2(1).csv)
+2026-01-05 11:29:15,112 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 11:30:14,297 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 11:30:14,715 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 11:30:18,135 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 11:30:18,635 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 11:30:19,309 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 11:30:20,098 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 11:30:38,309 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 11:30:40,082 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 11:30:41,886 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 11:31:11,393 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 11:31:12,581 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 11:31:27,763 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 11:31:28,258 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 11:31:28,893 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 11:31:30,637 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 11:31:31,574 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 11:31:32,104 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 11:31:34,318 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 11:31:34,826 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 11:31:35,232 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 11:31:36,561 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 11:31:37,803 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 11:31:38,564 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 11:31:39,849 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 11:31:40,306 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 11:31:41,247 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 11:31:42,113 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 11:31:49,870 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 11:31:50,402 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 11:31:51,026 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 11:31:51,478 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 11:32:34,931 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 11:32:36,793 [INFO] jet_app - [UI] JET run requested (file=(테스트)22-24분개장.csv, size=57531744 bytes, person_names=['싸이토젠'])
+2026-01-05 11:32:36,793 [INFO] jet_app - [UI] Step 1: load_csv_to_sqlite 시작
+2026-01-05 11:32:36,793 [INFO] jet_app.jet_core - [load_csv_to_sqlite] start (encoding=utf-8-sig)
+2026-01-05 11:32:38,006 [INFO] jet_app.jet_core - [load_csv_to_sqlite] CSV loaded: rows=275099, cols=18, columns=['회계연도', '전기일', '확정번호', '전표번호', '전표라인번호', '계정코드', '계정명', '차변', '대변', '차대변지시자', '라인적용', '현지통화금액', '공정', '공정명', '사용자', '사용자명', '거래처', '거래처명']
+2026-01-05 11:32:38,443 [ERROR] jet_app.jet_core - [load_csv_to_sqlite] validation failed: 누락된 필수 컬럼: 라인적요
+2026-01-05 11:32:38,459 [INFO] jet_app - [UI] Step 1 완료: rows=275099, cols=18, missing_required=['라인적요'], errors=['누락된 필수 컬럼: 라인적요']
+2026-01-05 11:32:38,474 [ERROR] jet_app - [UI] CSV 구조 오류로 JET 실행 중단: 누락된 필수 컬럼: 라인적요
+2026-01-05 11:32:38,621 [INFO] jet_app - [UI] JET run finished (file=(테스트)22-24분개장.csv)
+2026-01-05 11:32:57,662 [INFO] jet_app - [render_results] rendering results for years=[2023] (result_sets=11)
+2026-01-05 11:33:00,194 [INFO] jet_app - [UI] JET run requested (file=(테스트1) 2-4. 2024년 별도 분개장.csv, size=24849929 bytes, person_names=['싸이토젠'])
+2026-01-05 11:33:00,209 [INFO] jet_app - [UI] Step 1: load_csv_to_sqlite 시작
+2026-01-05 11:33:00,209 [INFO] jet_app.jet_core - [load_csv_to_sqlite] start (encoding=utf-8-sig)
+2026-01-05 11:33:00,726 [INFO] jet_app.jet_core - [load_csv_to_sqlite] CSV loaded: rows=117672, cols=18, columns=['회계연도', '전기일', '확정번호', '전표번호', '전표라인번호', '계정코드', '계정명', '차변', '대변', '차대변지시자', '현지통화금액', '라인적요', '공정', '공정명', '사용자', '사용자명', '거래처', '거래처명']
+2026-01-05 11:33:01,331 [INFO] jet_app.jet_core - [load_csv_to_sqlite] success: in-memory DB created, table=journal_entries, rows=117672
+2026-01-05 11:33:01,362 [INFO] jet_app - [UI] Step 1 완료: rows=117672, cols=18, missing_required=[], errors=[]
+2026-01-05 11:33:01,396 [INFO] jet_app.jet_core - [derive_years_from_db] detected years: raw=[2024] -> range=[2024]
+2026-01-05 11:33:01,396 [INFO] jet_app - [UI] Step 5: run_jet_tests 시작 (years=[2024], person_names=['싸이토젠'], min_amount=1000000000)
+2026-01-05 11:33:01,396 [INFO] jet_app.jet_core - [run_jet_tests] start (years=[2024], person_names=['싸이토젠'], person_birthdates=None, min_amount=1000000000)
+2026-01-05 11:33:01,396 [INFO] jet_app.jet_core - [run_jet_tests] processing year=2024
+2026-01-05 11:33:01,396 [INFO] jet_app.jet_core - [create_korean_holiday_table] building holiday table for year=2024 -> holiday_2024
+2026-01-05 11:33:01,417 [INFO] jet_app.jet_core - [create_korean_holiday_table] table=holiday_2024 created (rows=120)
+2026-01-05 11:33:01,417 [INFO] jet_app.jet_core - [run_jet_tests] building debug info for year=2024 (prefix=[2024] )
+2026-01-05 11:33:01,448 [INFO] jet_app.jet_core - [get_jet_queries] preparing queries for year=2024, holiday_table=holiday_2024, person_names=['싸이토젠'], min_amount=1000000000
+2026-01-05 11:33:01,464 [INFO] jet_app.jet_core - [get_jet_queries] 11 queries prepared
+2026-01-05 11:33:01,464 [INFO] jet_app.jet_core - [run_jet_tests] running query '① 분기말_휴일_지정금액이상_분개' (year=2024)
+2026-01-05 11:33:01,495 [INFO] jet_app.jet_core - [run_jet_tests] running query '② 적요_조정_포함' (year=2024)
+2026-01-05 11:33:01,532 [INFO] jet_app.jet_core - [run_jet_tests] running query '③ 분기말_수정_적요' (year=2024)
+2026-01-05 11:33:01,563 [INFO] jet_app.jet_core - [run_jet_tests] running query '④ 대차불일치_전표세트' (year=2024)
+2026-01-05 11:33:01,626 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑤ 누락된_전표번호' (year=2024)
+2026-01-05 11:33:01,673 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑥ 계정별_3회이하' (year=2024)
+2026-01-05 11:33:01,772 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑦ 사용자별_3회이하' (year=2024)
+2026-01-05 11:33:01,865 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑧ 거래처별_3회이하' (year=2024)
+2026-01-05 11:33:02,091 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑨ 금액_만원단위_0000' (year=2024)
+2026-01-05 11:33:02,217 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑩ 주요인물_거래처명_매칭' (year=2024)
+2026-01-05 11:33:02,254 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑪ 마이너스_금액_분개' (year=2024)
+2026-01-05 11:33:02,286 [INFO] jet_app.jet_core - [run_jet_tests] all queries finished (count=11)
+2026-01-05 11:33:02,286 [INFO] jet_app - [UI] Step 5 완료: result_sets=11
+2026-01-05 11:33:09,445 [INFO] jet_app - [UI] ④번 전표번호별 상세 데이터 준비 중...
+2026-01-05 11:33:09,492 [INFO] jet_app - [UI] ④번 전표번호별 상세 데이터 준비 완료: 2개
+2026-01-05 11:33:09,573 [INFO] jet_app - [UI] JET run finished (file=(테스트1) 2-4. 2024년 별도 분개장.csv)
+2026-01-05 11:33:09,573 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-05 11:33:22,589 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-05 11:33:23,866 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-05 11:33:24,730 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-05 11:34:18,600 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-05 11:34:22,414 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-20 19:10:54,730 [INFO] jet_app - === JET Streamlit app logging initialized ===
+2026-01-20 19:10:54,730 [INFO] jet_app - Log file: C:\Users\FA\Downloads\jet_project\jet_project\jet_app.log
+2026-01-20 19:25:19,179 [INFO] jet_app - === JET Streamlit app logging initialized ===
+2026-01-20 19:25:19,179 [INFO] jet_app - Log file: C:\Users\FA\Downloads\jet_project\jet_project\jet_app.log
+2026-01-21 08:58:05,312 [INFO] jet_app - === JET Streamlit app logging initialized ===
+2026-01-21 08:58:05,312 [INFO] jet_app - Log file: C:\Users\FA\Downloads\jet_project\jet_project\jet_app.log
+2026-01-21 08:59:22,969 [INFO] jet_app - === JET Streamlit app logging initialized ===
+2026-01-21 08:59:22,969 [INFO] jet_app - Log file: C:\Users\FA\Downloads\jet_project\jet_project\jet_app.log
+2026-01-21 09:13:56,841 [INFO] jet_app - === JET Streamlit app logging initialized ===
+2026-01-21 09:13:56,841 [INFO] jet_app - Log file: C:\Users\FA\Downloads\jet_project\jet_project\jet_app.log
+2026-01-21 09:29:56,559 [INFO] jet_app - === JET Streamlit app logging initialized ===
+2026-01-21 09:29:56,560 [INFO] jet_app - Log file: C:\Users\FA\Downloads\jet_project\jet_project\jet_app.log
+2026-01-21 10:37:50,737 [INFO] jet_app - === JET Streamlit app logging initialized ===
+2026-01-21 10:37:50,737 [INFO] jet_app - Log file: C:\Users\FA\Downloads\jet_project\jet_project\jet_app.log
+2026-01-21 10:42:39,275 [INFO] jet_app - === JET Streamlit app logging initialized ===
+2026-01-21 10:42:39,275 [INFO] jet_app - Log file: C:\Users\FA\Downloads\jet_project\jet_project\jet_app.log
+2026-01-21 10:44:39,704 [INFO] jet_app - === JET Streamlit app logging initialized ===
+2026-01-21 10:44:39,705 [INFO] jet_app - Log file: C:\Users\FA\Downloads\jet_project\jet_project\jet_app.log
+2026-01-21 10:44:42,087 [INFO] jet_app - === JET Streamlit app logging initialized ===
+2026-01-21 10:44:42,087 [INFO] jet_app - Log file: C:\Users\FA\Downloads\jet_project\jet_project\jet_app.log
+2026-01-21 10:45:15,882 [INFO] jet_app - === JET Streamlit app logging initialized ===
+2026-01-21 10:45:15,883 [INFO] jet_app - Log file: C:\Users\FA\Downloads\jet_project\jet_project\jet_app.log
+2026-01-21 10:48:13,508 [INFO] jet_app - === JET Streamlit app logging initialized ===
+2026-01-21 10:48:13,510 [INFO] jet_app - Log file: jet_app.log
+2026-01-21 15:34:30,539 [INFO] jet_app - === JET Streamlit app logging initialized ===
+2026-01-21 15:34:30,539 [INFO] jet_app - Log file: C:\Users\FA\Downloads\jet_project\jet_project\jet_app.log
+2026-01-27 16:28:50,905 [INFO] jet_app - === JET Streamlit app logging initialized ===
+2026-01-27 16:28:50,905 [INFO] jet_app - Log file: C:\Users\FA\Downloads\jet_project\jet_project\jet_app.log
+2026-01-27 16:29:22,167 [INFO] jet_app - === JET Streamlit app logging initialized ===
+2026-01-27 16:29:22,167 [INFO] jet_app - Log file: C:\Users\FA\Downloads\jet_project\jet_project\jet_app.log
+2026-01-27 16:30:19,010 [INFO] jet_app - [UI] JET run requested (file=(테스트1) 2-4. 2024년 별도 분개장.csv, size=49729543 bytes, person_names=[])
+2026-01-27 16:30:19,012 [INFO] jet_app - [UI] Step 1: load_csv_to_sqlite 시작
+2026-01-27 16:30:19,012 [INFO] jet_app.jet_core - [load_csv_to_sqlite] start (encoding=utf-8-sig)
+2026-01-27 16:30:19,598 [INFO] jet_app.jet_core - [load_csv_to_sqlite] CSV loaded: rows=235344, cols=18, columns=['회계연도', '전기일', '확정번호', '전표번호', '전표라인번호', '계정코드', '계정명', '차변', '대변', '차대변지시자', '현지통화금액', '라인적요', '공정', '공정명', '사용자', '사용자명', '거래처', '거래처명']
+2026-01-27 16:30:20,429 [INFO] jet_app.jet_core - [load_csv_to_sqlite] success: in-memory DB created, table=journal_entries, rows=235344
+2026-01-27 16:30:20,441 [INFO] jet_app - [UI] Step 1 완료: rows=235344, cols=18, missing_required=[], errors=[]
+2026-01-27 16:30:20,492 [INFO] jet_app.jet_core - [derive_years_from_db] detected years: raw=[2024, 2023] -> range=[2023, 2024]
+2026-01-27 16:30:20,493 [INFO] jet_app - [UI] Step 5: run_jet_tests 시작 (years=[2023, 2024], person_names=[], min_amount=1000000000)
+2026-01-27 16:30:20,493 [INFO] jet_app.jet_core - [run_jet_tests] start (years=[2023, 2024], person_names=None, person_birthdates=None, min_amount=1000000000)
+2026-01-27 16:30:20,493 [INFO] jet_app.jet_core - [run_jet_tests] processing year=2023
+2026-01-27 16:30:20,494 [INFO] jet_app.jet_core - [create_korean_holiday_table] building holiday table for year=2023 -> holiday_2023
+2026-01-27 16:30:20,739 [INFO] jet_app.jet_core - [create_korean_holiday_table] table=holiday_2023 created (rows=118)
+2026-01-27 16:30:20,739 [INFO] jet_app.jet_core - [run_jet_tests] building debug info for year=2023 (prefix=[2023] )
+2026-01-27 16:30:20,768 [INFO] jet_app.jet_core - [get_jet_queries] preparing queries for year=2023, holiday_table=holiday_2023, person_names=None, min_amount=1000000000
+2026-01-27 16:30:20,768 [INFO] jet_app.jet_core - [get_jet_queries] 11 queries prepared
+2026-01-27 16:30:20,768 [INFO] jet_app.jet_core - [run_jet_tests] running query '① 분기말_휴일_지정금액이상_분개' (year=2023)
+2026-01-27 16:30:20,784 [INFO] jet_app.jet_core - [run_jet_tests] running query '② 적요_조정_포함' (year=2023)
+2026-01-27 16:30:20,812 [INFO] jet_app.jet_core - [run_jet_tests] running query '③ 분기말_수정_적요' (year=2023)
+2026-01-27 16:30:20,841 [INFO] jet_app.jet_core - [run_jet_tests] running query '④ 대차불일치_전표세트' (year=2023)
+2026-01-27 16:30:20,924 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑤ 누락된_전표번호' (year=2023)
+2026-01-27 16:30:20,961 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑥ 계정별_3회이하' (year=2023)
+2026-01-27 16:30:21,094 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑦ 사용자별_3회이하' (year=2023)
+2026-01-27 16:30:21,234 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑧ 거래처별_3회이하' (year=2023)
+2026-01-27 16:30:21,558 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑨ 금액_만원단위_0000' (year=2023)
+2026-01-27 16:30:21,709 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑩ 주요인물_거래처명_매칭' (year=2023)
+2026-01-27 16:30:21,710 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑪ 마이너스_금액_분개' (year=2023)
+2026-01-27 16:30:21,742 [INFO] jet_app.jet_core - [run_jet_tests] processing year=2024
+2026-01-27 16:30:21,742 [INFO] jet_app.jet_core - [create_korean_holiday_table] building holiday table for year=2024 -> holiday_2024
+2026-01-27 16:30:21,745 [INFO] jet_app.jet_core - [create_korean_holiday_table] table=holiday_2024 created (rows=120)
+2026-01-27 16:30:21,745 [INFO] jet_app.jet_core - [run_jet_tests] building debug info for year=2024 (prefix=[2024] )
+2026-01-27 16:30:21,801 [INFO] jet_app.jet_core - [get_jet_queries] preparing queries for year=2024, holiday_table=holiday_2024, person_names=None, min_amount=1000000000
+2026-01-27 16:30:21,801 [INFO] jet_app.jet_core - [get_jet_queries] 11 queries prepared
+2026-01-27 16:30:21,801 [INFO] jet_app.jet_core - [run_jet_tests] running query '① 분기말_휴일_지정금액이상_분개' (year=2024)
+2026-01-27 16:30:21,828 [INFO] jet_app.jet_core - [run_jet_tests] running query '② 적요_조정_포함' (year=2024)
+2026-01-27 16:30:21,856 [INFO] jet_app.jet_core - [run_jet_tests] running query '③ 분기말_수정_적요' (year=2024)
+2026-01-27 16:30:21,886 [INFO] jet_app.jet_core - [run_jet_tests] running query '④ 대차불일치_전표세트' (year=2024)
+2026-01-27 16:30:21,970 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑤ 누락된_전표번호' (year=2024)
+2026-01-27 16:30:22,008 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑥ 계정별_3회이하' (year=2024)
+2026-01-27 16:30:22,150 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑦ 사용자별_3회이하' (year=2024)
+2026-01-27 16:30:22,295 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑧ 거래처별_3회이하' (year=2024)
+2026-01-27 16:30:22,611 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑨ 금액_만원단위_0000' (year=2024)
+2026-01-27 16:30:22,768 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑩ 주요인물_거래처명_매칭' (year=2024)
+2026-01-27 16:30:22,770 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑪ 마이너스_금액_분개' (year=2024)
+2026-01-27 16:30:22,818 [INFO] jet_app.jet_core - [run_jet_tests] all queries finished (count=11)
+2026-01-27 16:30:22,826 [INFO] jet_app - [UI] Step 5 완료: result_sets=11
+2026-01-27 16:30:49,182 [INFO] jet_app - [UI] JET run finished (file=(테스트1) 2-4. 2024년 별도 분개장.csv)
+2026-01-27 16:30:49,184 [INFO] jet_app - [render_results] rendering results for years=[2023, 2024] (result_sets=11)
+2026-01-27 16:34:07,427 [INFO] jet_app - [render_results] rendering results for years=[2023, 2024] (result_sets=11)
+2026-01-27 16:34:08,636 [INFO] jet_app - [render_results] rendering results for years=[2023, 2024] (result_sets=11)
+2026-01-27 16:34:09,574 [INFO] jet_app - [render_results] rendering results for years=[2023, 2024] (result_sets=11)
+2026-01-28 09:26:19,946 [INFO] jet_app - === JET Streamlit app logging initialized ===
+2026-01-28 09:26:19,946 [INFO] jet_app - Log file: C:\Users\FA\Downloads\jet_project\jet_project\jet_app.log
+2026-01-28 09:27:08,406 [INFO] jet_app - === JET Streamlit app logging initialized ===
+2026-01-28 09:27:08,406 [INFO] jet_app - Log file: C:\Users\FA\Downloads\jet_project\jet_project\jet_app.log
+2026-01-28 09:27:36,478 [INFO] jet_app - [UI] JET run requested (file=(테스트2) 2-4. 2024년 별도 분개장.csv, size=24864883 bytes, person_names=[])
+2026-01-28 09:27:36,480 [INFO] jet_app - [UI] Step 1: load_csv_to_sqlite 시작
+2026-01-28 09:27:36,480 [INFO] jet_app.jet_core - [load_csv_to_sqlite] start (encoding=utf-8-sig)
+2026-01-28 09:27:36,813 [INFO] jet_app.jet_core - [load_csv_to_sqlite] CSV loaded: rows=117672, cols=18, columns=['회계연도', '전기일', '확정번호', '전표번호', '전표라인번호', '계정코드', '계정명', '차변', '대변', '차대변지시자', '현지통화금액', '라인적요', '공정', '공정명', '사용자', '사용자명', '거래처', '거래처명']
+2026-01-28 09:27:37,240 [INFO] jet_app.jet_core - [load_csv_to_sqlite] success: in-memory DB created, table=journal_entries, rows=117672
+2026-01-28 09:27:37,247 [INFO] jet_app - [UI] Step 1 완료: rows=117672, cols=18, missing_required=[], errors=[]
+2026-01-28 09:27:37,268 [INFO] jet_app.jet_core - [derive_years_from_db] detected years: raw=[2024] -> range=[2024]
+2026-01-28 09:27:37,268 [INFO] jet_app - [UI] Step 5: run_jet_tests 시작 (years=[2024], person_names=[], min_amount=1000000000)
+2026-01-28 09:27:37,269 [INFO] jet_app.jet_core - [run_jet_tests] start (years=[2024], person_names=None, person_birthdates=None, min_amount=1000000000)
+2026-01-28 09:27:37,269 [INFO] jet_app.jet_core - [run_jet_tests] processing year=2024
+2026-01-28 09:27:37,269 [INFO] jet_app.jet_core - [create_korean_holiday_table] building holiday table for year=2024 -> holiday_2024
+2026-01-28 09:27:37,546 [INFO] jet_app.jet_core - [create_korean_holiday_table] table=holiday_2024 created (rows=120)
+2026-01-28 09:27:37,547 [INFO] jet_app.jet_core - [run_jet_tests] building debug info for year=2024 (prefix=[2024] )
+2026-01-28 09:27:37,571 [INFO] jet_app.jet_core - [get_jet_queries] preparing queries for year=2024, holiday_table=holiday_2024, person_names=None, min_amount=1000000000
+2026-01-28 09:27:37,571 [INFO] jet_app.jet_core - [get_jet_queries] 11 queries prepared
+2026-01-28 09:27:37,571 [INFO] jet_app.jet_core - [run_jet_tests] running query '① 분기말_휴일_지정금액이상_분개' (year=2024)
+2026-01-28 09:27:37,587 [INFO] jet_app.jet_core - [run_jet_tests] running query '② 적요_조정_포함' (year=2024)
+2026-01-28 09:27:37,602 [INFO] jet_app.jet_core - [run_jet_tests] running query '③ 분기말_수정_적요' (year=2024)
+2026-01-28 09:27:37,619 [INFO] jet_app.jet_core - [run_jet_tests] running query '④ 대차불일치_전표세트' (year=2024)
+2026-01-28 09:27:37,662 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑤ 누락된_전표번호' (year=2024)
+2026-01-28 09:27:37,681 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑥ 계정별_3회이하' (year=2024)
+2026-01-28 09:27:37,749 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑦ 사용자별_3회이하' (year=2024)
+2026-01-28 09:27:37,818 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑧ 거래처별_3회이하' (year=2024)
+2026-01-28 09:27:37,976 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑨ 금액_만원단위_0000' (year=2024)
+2026-01-28 09:27:38,048 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑩ 주요인물_거래처명_매칭' (year=2024)
+2026-01-28 09:27:38,050 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑪ 마이너스_금액_분개' (year=2024)
+2026-01-28 09:27:38,066 [INFO] jet_app.jet_core - [run_jet_tests] all queries finished (count=11)
+2026-01-28 09:27:38,066 [INFO] jet_app - [UI] Step 5 완료: result_sets=11
+2026-01-28 09:27:43,372 [INFO] jet_app - [UI] ④번 전표번호별 상세 데이터 준비 중...
+2026-01-28 09:27:43,387 [INFO] jet_app - [UI] ④번 전표번호별 상세 데이터 준비 완료: 2개
+2026-01-28 09:27:43,497 [INFO] jet_app - [UI] JET run finished (file=(테스트2) 2-4. 2024년 별도 분개장.csv)
+2026-01-28 09:27:43,498 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-28 10:28:08,074 [INFO] jet_app - === JET Streamlit app logging initialized ===
+2026-01-28 10:28:08,074 [INFO] jet_app - Log file: C:\Users\FA\Downloads\jet_project\jet_project\jet_app.log
+2026-01-28 10:28:12,786 [INFO] jet_app - [UI] JET run requested (file=테스트3.csv, size=49729516 bytes, person_names=[])
+2026-01-28 10:28:12,788 [INFO] jet_app - [UI] Step 1: load_csv_to_sqlite 시작
+2026-01-28 10:28:12,789 [INFO] jet_app.jet_core - [load_csv_to_sqlite] start (encoding=utf-8-sig)
+2026-01-28 10:28:13,371 [INFO] jet_app.jet_core - [load_csv_to_sqlite] CSV loaded: rows=235344, cols=18, columns=['회계연도', 'Unnamed: 1', '번호', '전표', '전표라인번호', '계정', '계정명', '차변', '대변', '차대변지시자', '현지통화금액', '라인적요', '공정', '공정명', '사용자', '사용자명', '거래처', '거래처명']
+2026-01-28 10:28:13,538 [ERROR] jet_app.jet_core - [load_csv_to_sqlite] validation failed: 누락된 필수 컬럼: 전기일, 전표번호, 계정코드
+2026-01-28 10:28:13,546 [INFO] jet_app - [UI] Step 1 완료: rows=235344, cols=18, missing_required=['전기일', '전표번호', '계정코드'], errors=['누락된 필수 컬럼: 전기일, 전표번호, 계정코드']
+2026-01-28 10:28:13,555 [ERROR] jet_app - [UI] CSV 구조 오류로 JET 실행 중단: 누락된 필수 컬럼: 전기일, 전표번호, 계정코드
+2026-01-28 10:28:13,630 [INFO] jet_app - [UI] JET run finished (file=테스트3.csv)
+2026-01-28 14:06:07,150 [INFO] jet_app - === JET Streamlit app logging initialized ===
+2026-01-28 14:06:07,150 [INFO] jet_app - Log file: C:\Users\FA\Downloads\jet_project\jet_project\jet_app.log
+2026-01-28 14:06:19,627 [INFO] jet_app - [UI] JET run requested (file=(테스트2) 2-4. 2024년 별도 분개장.csv, size=24864883 bytes, person_names=[])
+2026-01-28 14:06:19,629 [INFO] jet_app - [UI] Step 1: load_csv_to_sqlite 시작
+2026-01-28 14:06:19,629 [INFO] jet_app.jet_core - [load_csv_to_sqlite] start (encoding=utf-8-sig)
+2026-01-28 14:06:19,969 [INFO] jet_app.jet_core - [load_csv_to_sqlite] CSV loaded: rows=117672, cols=18, columns=['회계연도', '전기일', '확정번호', '전표번호', '전표라인번호', '계정코드', '계정명', '차변', '대변', '차대변지시자', '현지통화금액', '라인적요', '공정', '공정명', '사용자', '사용자명', '거래처', '거래처명']
+2026-01-28 14:06:20,390 [INFO] jet_app.jet_core - [load_csv_to_sqlite] success: in-memory DB created, table=journal_entries, rows=117672
+2026-01-28 14:06:20,397 [INFO] jet_app - [UI] Step 1 완료: rows=117672, cols=18, missing_required=[], errors=[]
+2026-01-28 14:06:20,413 [INFO] jet_app.jet_core - [derive_years_from_db] detected years: raw=[2024] -> range=[2024]
+2026-01-28 14:06:20,414 [INFO] jet_app - [UI] Step 5: run_jet_tests 시작 (years=[2024], person_names=[], min_amount=1000000000)
+2026-01-28 14:06:20,414 [INFO] jet_app.jet_core - [run_jet_tests] start (years=[2024], person_names=None, person_birthdates=None, min_amount=1000000000)
+2026-01-28 14:06:20,414 [INFO] jet_app.jet_core - [run_jet_tests] processing year=2024
+2026-01-28 14:06:20,414 [INFO] jet_app.jet_core - [create_korean_holiday_table] building holiday table for year=2024 -> holiday_2024
+2026-01-28 14:06:20,607 [INFO] jet_app.jet_core - [create_korean_holiday_table] table=holiday_2024 created (rows=120)
+2026-01-28 14:06:20,607 [INFO] jet_app.jet_core - [run_jet_tests] building debug info for year=2024 (prefix=[2024] )
+2026-01-28 14:06:20,630 [INFO] jet_app.jet_core - [get_jet_queries] preparing queries for year=2024, holiday_table=holiday_2024, person_names=None, min_amount=1000000000
+2026-01-28 14:06:20,630 [INFO] jet_app.jet_core - [get_jet_queries] 11 queries prepared
+2026-01-28 14:06:20,630 [INFO] jet_app.jet_core - [run_jet_tests] running query '① 분기말_휴일_지정금액이상_분개' (year=2024)
+2026-01-28 14:06:20,645 [INFO] jet_app.jet_core - [run_jet_tests] running query '② 적요_조정_포함' (year=2024)
+2026-01-28 14:06:20,660 [INFO] jet_app.jet_core - [run_jet_tests] running query '③ 분기말_수정_적요' (year=2024)
+2026-01-28 14:06:20,677 [INFO] jet_app.jet_core - [run_jet_tests] running query '④ 대차불일치_전표세트' (year=2024)
+2026-01-28 14:06:20,719 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑤ 누락된_전표번호' (year=2024)
+2026-01-28 14:06:20,738 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑥ 계정별_3회이하' (year=2024)
+2026-01-28 14:06:20,806 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑦ 사용자별_3회이하' (year=2024)
+2026-01-28 14:06:20,872 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑧ 거래처별_3회이하' (year=2024)
+2026-01-28 14:06:21,023 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑨ 금액_만원단위_0000' (year=2024)
+2026-01-28 14:06:21,090 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑩ 주요인물_거래처명_매칭' (year=2024)
+2026-01-28 14:06:21,092 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑪ 마이너스_금액_분개' (year=2024)
+2026-01-28 14:06:21,108 [INFO] jet_app.jet_core - [run_jet_tests] all queries finished (count=11)
+2026-01-28 14:06:21,108 [INFO] jet_app - [UI] Step 5 완료: result_sets=11
+2026-01-28 14:06:26,450 [INFO] jet_app - [UI] ④번 전표번호별 상세 데이터 준비 중...
+2026-01-28 14:06:26,465 [INFO] jet_app - [UI] ④번 전표번호별 상세 데이터 준비 완료: 2개
+2026-01-28 14:06:26,569 [INFO] jet_app - [UI] JET run finished (file=(테스트2) 2-4. 2024년 별도 분개장.csv)
+2026-01-28 14:06:26,570 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-28 14:06:37,361 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-28 14:06:38,127 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-28 14:06:46,999 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-28 14:06:47,814 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-28 14:06:51,467 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-28 14:06:54,270 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-28 14:06:55,086 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-01-29 13:31:25,606 [INFO] jet_app - === JET Streamlit app logging initialized ===
+2026-01-29 13:31:25,607 [INFO] jet_app - Log file: C:\Users\FA\Downloads\jet_project\jet_project\jet_app.log
+2026-01-29 13:31:50,925 [INFO] jet_app - [UI] JET run requested (file=(테스트1) 2-4. 2024년 별도 분개장.csv, size=49729543 bytes, person_names=[])
+2026-01-29 13:31:50,929 [INFO] jet_app - [UI] Step 1: load_csv_to_sqlite 시작
+2026-01-29 13:31:50,930 [INFO] jet_app.jet_core - [load_csv_to_sqlite] start (encoding=utf-8-sig)
+2026-01-29 13:31:51,972 [INFO] jet_app.jet_core - [load_csv_to_sqlite] CSV loaded: rows=235344, cols=18, columns=['회계연도', '전기일', '확정번호', '전표번호', '전표라인번호', '계정코드', '계정명', '차변', '대변', '차대변지시자', '현지통화금액', '라인적요', '공정', '공정명', '사용자', '사용자명', '거래처', '거래처명']
+2026-01-29 13:31:53,432 [INFO] jet_app.jet_core - [load_csv_to_sqlite] success: in-memory DB created, table=journal_entries, rows=235344
+2026-01-29 13:31:53,449 [INFO] jet_app - [UI] Step 1 완료: rows=235344, cols=18, missing_required=[], errors=[]
+2026-01-29 13:31:53,525 [INFO] jet_app.jet_core - [derive_years_from_db] detected years: raw=[2024, 2023] -> range=[2023, 2024]
+2026-01-29 13:31:53,526 [INFO] jet_app - [UI] Step 5: run_jet_tests 시작 (years=[2023, 2024], person_names=[], min_amount=1000000000)
+2026-01-29 13:31:53,526 [INFO] jet_app.jet_core - [run_jet_tests] start (years=[2023, 2024], person_names=None, person_birthdates=None, min_amount=1000000000)
+2026-01-29 13:31:53,527 [INFO] jet_app.jet_core - [run_jet_tests] processing year=2023
+2026-01-29 13:31:53,527 [INFO] jet_app.jet_core - [create_korean_holiday_table] building holiday table for year=2023 -> holiday_2023
+2026-01-29 13:31:54,022 [INFO] jet_app.jet_core - [create_korean_holiday_table] table=holiday_2023 created (rows=118)
+2026-01-29 13:31:54,022 [INFO] jet_app.jet_core - [run_jet_tests] building debug info for year=2023 (prefix=[2023] )
+2026-01-29 13:31:54,076 [INFO] jet_app.jet_core - [get_jet_queries] preparing queries for year=2023, holiday_table=holiday_2023, person_names=None, min_amount=1000000000
+2026-01-29 13:31:54,076 [INFO] jet_app.jet_core - [get_jet_queries] 11 queries prepared
+2026-01-29 13:31:54,076 [INFO] jet_app.jet_core - [run_jet_tests] running query '① 분기말_휴일_지정금액이상_분개' (year=2023)
+2026-01-29 13:31:54,102 [INFO] jet_app.jet_core - [run_jet_tests] running query '② 적요_조정_포함' (year=2023)
+2026-01-29 13:31:54,154 [INFO] jet_app.jet_core - [run_jet_tests] running query '③ 분기말_수정_적요' (year=2023)
+2026-01-29 13:31:54,206 [INFO] jet_app.jet_core - [run_jet_tests] running query '④ 대차불일치_전표세트' (year=2023)
+2026-01-29 13:31:54,362 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑤ 누락된_전표번호' (year=2023)
+2026-01-29 13:31:54,431 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑥ 계정별_3회이하' (year=2023)
+2026-01-29 13:31:54,670 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑦ 사용자별_3회이하' (year=2023)
+2026-01-29 13:31:54,910 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑧ 거래처별_3회이하' (year=2023)
+2026-01-29 13:31:55,462 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑨ 금액_만원단위_0000' (year=2023)
+2026-01-29 13:31:55,723 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑩ 주요인물_거래처명_매칭' (year=2023)
+2026-01-29 13:31:55,725 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑪ 마이너스_금액_분개' (year=2023)
+2026-01-29 13:31:55,784 [INFO] jet_app.jet_core - [run_jet_tests] processing year=2024
+2026-01-29 13:31:55,784 [INFO] jet_app.jet_core - [create_korean_holiday_table] building holiday table for year=2024 -> holiday_2024
+2026-01-29 13:31:55,788 [INFO] jet_app.jet_core - [create_korean_holiday_table] table=holiday_2024 created (rows=120)
+2026-01-29 13:31:55,788 [INFO] jet_app.jet_core - [run_jet_tests] building debug info for year=2024 (prefix=[2024] )
+2026-01-29 13:31:55,874 [INFO] jet_app.jet_core - [get_jet_queries] preparing queries for year=2024, holiday_table=holiday_2024, person_names=None, min_amount=1000000000
+2026-01-29 13:31:55,874 [INFO] jet_app.jet_core - [get_jet_queries] 11 queries prepared
+2026-01-29 13:31:55,874 [INFO] jet_app.jet_core - [run_jet_tests] running query '① 분기말_휴일_지정금액이상_분개' (year=2024)
+2026-01-29 13:31:55,916 [INFO] jet_app.jet_core - [run_jet_tests] running query '② 적요_조정_포함' (year=2024)
+2026-01-29 13:31:55,959 [INFO] jet_app.jet_core - [run_jet_tests] running query '③ 분기말_수정_적요' (year=2024)
+2026-01-29 13:31:56,003 [INFO] jet_app.jet_core - [run_jet_tests] running query '④ 대차불일치_전표세트' (year=2024)
+2026-01-29 13:31:56,117 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑤ 누락된_전표번호' (year=2024)
+2026-01-29 13:31:56,171 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑥ 계정별_3회이하' (year=2024)
+2026-01-29 13:31:56,357 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑦ 사용자별_3회이하' (year=2024)
+2026-01-29 13:31:56,535 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑧ 거래처별_3회이하' (year=2024)
+2026-01-29 13:31:56,986 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑨ 금액_만원단위_0000' (year=2024)
+2026-01-29 13:31:57,180 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑩ 주요인물_거래처명_매칭' (year=2024)
+2026-01-29 13:31:57,182 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑪ 마이너스_금액_분개' (year=2024)
+2026-01-29 13:31:57,246 [INFO] jet_app.jet_core - [run_jet_tests] all queries finished (count=11)
+2026-01-29 13:31:57,255 [INFO] jet_app - [UI] Step 5 완료: result_sets=11
+2026-01-29 13:32:25,614 [INFO] jet_app - [UI] JET run finished (file=(테스트1) 2-4. 2024년 별도 분개장.csv)
+2026-01-29 13:32:25,614 [INFO] jet_app - [render_results] rendering results for years=[2023, 2024] (result_sets=11)
+2026-01-29 13:39:43,069 [INFO] jet_app - [render_results] rendering results for years=[2023, 2024] (result_sets=11)
+2026-01-29 13:39:44,740 [INFO] jet_app - [render_results] rendering results for years=[2023, 2024] (result_sets=11)
+2026-01-29 13:39:46,777 [INFO] jet_app - [render_results] rendering results for years=[2023, 2024] (result_sets=11)
+2026-01-29 13:39:48,712 [INFO] jet_app - [render_results] rendering results for years=[2023, 2024] (result_sets=11)
+2026-01-29 13:39:49,332 [INFO] jet_app - [render_results] rendering results for years=[2023, 2024] (result_sets=11)
+2026-01-29 13:39:50,314 [INFO] jet_app - [render_results] rendering results for years=[2023, 2024] (result_sets=11)
+2026-01-29 13:39:52,121 [INFO] jet_app - [render_results] rendering results for years=[2023, 2024] (result_sets=11)
+2026-01-29 13:39:52,537 [INFO] jet_app - [render_results] rendering results for years=[2023, 2024] (result_sets=11)
+2026-01-29 13:39:53,302 [INFO] jet_app - [render_results] rendering results for years=[2023, 2024] (result_sets=11)
+2026-01-30 10:04:17,823 [INFO] jet_app - === JET Streamlit app logging initialized ===
+2026-01-30 10:04:17,823 [INFO] jet_app - Log file: C:\Users\FA\Downloads\jet_project\jet_project\jet_app.log
+2026-01-30 10:05:29,659 [INFO] jet_app - [UI] JET run requested (file=(테스트1) 2-4. 2024년 별도 분개장.csv, size=49729543 bytes, person_names=[])
+2026-01-30 10:05:29,660 [INFO] jet_app - [UI] Step 1: load_csv_to_sqlite 시작
+2026-01-30 10:05:29,660 [INFO] jet_app.jet_core - [load_csv_to_sqlite] start (encoding=utf-8-sig)
+2026-01-30 10:05:30,252 [INFO] jet_app.jet_core - [load_csv_to_sqlite] CSV loaded: rows=235344, cols=18, columns=['회계연도', '전기일', '확정번호', '전표번호', '전표라인번호', '계정코드', '계정명', '차변', '대변', '차대변지시자', '현지통화금액', '라인적요', '공정', '공정명', '사용자', '사용자명', '거래처', '거래처명']
+2026-01-30 10:05:31,118 [INFO] jet_app.jet_core - [load_csv_to_sqlite] success: in-memory DB created, table=journal_entries, rows=235344
+2026-01-30 10:05:31,130 [INFO] jet_app - [UI] Step 1 완료: rows=235344, cols=18, missing_required=[], errors=[]
+2026-01-30 10:05:31,175 [INFO] jet_app.jet_core - [derive_years_from_db] detected years: raw=[2024, 2023] -> range=[2023, 2024]
+2026-01-30 10:05:31,176 [INFO] jet_app - [UI] Step 5: run_jet_tests 시작 (years=[2023, 2024], person_names=[], min_amount=1000000000)
+2026-01-30 10:05:31,177 [INFO] jet_app.jet_core - [run_jet_tests] start (years=[2023, 2024], person_names=None, person_birthdates=None, min_amount=1000000000)
+2026-01-30 10:05:31,177 [INFO] jet_app.jet_core - [run_jet_tests] processing year=2023
+2026-01-30 10:05:31,177 [INFO] jet_app.jet_core - [create_korean_holiday_table] building holiday table for year=2023 -> holiday_2023
+2026-01-30 10:05:31,431 [INFO] jet_app.jet_core - [create_korean_holiday_table] table=holiday_2023 created (rows=118)
+2026-01-30 10:05:31,431 [INFO] jet_app.jet_core - [run_jet_tests] building debug info for year=2023 (prefix=[2023] )
+2026-01-30 10:05:31,463 [INFO] jet_app.jet_core - [get_jet_queries] preparing queries for year=2023, holiday_table=holiday_2023, person_names=None, min_amount=1000000000
+2026-01-30 10:05:31,463 [INFO] jet_app.jet_core - [get_jet_queries] 11 queries prepared
+2026-01-30 10:05:31,463 [INFO] jet_app.jet_core - [run_jet_tests] running query '① 분기말_휴일_지정금액이상_분개' (year=2023)
+2026-01-30 10:05:31,480 [INFO] jet_app.jet_core - [run_jet_tests] running query '② 적요_조정_포함' (year=2023)
+2026-01-30 10:05:31,511 [INFO] jet_app.jet_core - [run_jet_tests] running query '③ 분기말_수정_적요' (year=2023)
+2026-01-30 10:05:31,541 [INFO] jet_app.jet_core - [run_jet_tests] running query '④ 대차불일치_전표세트' (year=2023)
+2026-01-30 10:05:31,630 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑤ 누락된_전표번호' (year=2023)
+2026-01-30 10:05:31,669 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑥ 계정별_3회이하' (year=2023)
+2026-01-30 10:05:31,818 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑦ 사용자별_3회이하' (year=2023)
+2026-01-30 10:05:31,962 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑧ 거래처별_3회이하' (year=2023)
+2026-01-30 10:05:32,329 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑨ 금액_만원단위_0000' (year=2023)
+2026-01-30 10:05:32,467 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑩ 주요인물_거래처명_매칭' (year=2023)
+2026-01-30 10:05:32,468 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑪ 마이너스_금액_분개' (year=2023)
+2026-01-30 10:05:32,501 [INFO] jet_app.jet_core - [run_jet_tests] processing year=2024
+2026-01-30 10:05:32,501 [INFO] jet_app.jet_core - [create_korean_holiday_table] building holiday table for year=2024 -> holiday_2024
+2026-01-30 10:05:32,503 [INFO] jet_app.jet_core - [create_korean_holiday_table] table=holiday_2024 created (rows=120)
+2026-01-30 10:05:32,503 [INFO] jet_app.jet_core - [run_jet_tests] building debug info for year=2024 (prefix=[2024] )
+2026-01-30 10:05:32,555 [INFO] jet_app.jet_core - [get_jet_queries] preparing queries for year=2024, holiday_table=holiday_2024, person_names=None, min_amount=1000000000
+2026-01-30 10:05:32,555 [INFO] jet_app.jet_core - [get_jet_queries] 11 queries prepared
+2026-01-30 10:05:32,555 [INFO] jet_app.jet_core - [run_jet_tests] running query '① 분기말_휴일_지정금액이상_분개' (year=2024)
+2026-01-30 10:05:32,589 [INFO] jet_app.jet_core - [run_jet_tests] running query '② 적요_조정_포함' (year=2024)
+2026-01-30 10:05:32,619 [INFO] jet_app.jet_core - [run_jet_tests] running query '③ 분기말_수정_적요' (year=2024)
+2026-01-30 10:05:32,651 [INFO] jet_app.jet_core - [run_jet_tests] running query '④ 대차불일치_전표세트' (year=2024)
+2026-01-30 10:05:32,744 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑤ 누락된_전표번호' (year=2024)
+2026-01-30 10:05:32,784 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑥ 계정별_3회이하' (year=2024)
+2026-01-30 10:05:32,941 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑦ 사용자별_3회이하' (year=2024)
+2026-01-30 10:05:33,080 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑧ 거래처별_3회이하' (year=2024)
+2026-01-30 10:05:33,411 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑨ 금액_만원단위_0000' (year=2024)
+2026-01-30 10:05:33,554 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑩ 주요인물_거래처명_매칭' (year=2024)
+2026-01-30 10:05:33,555 [INFO] jet_app.jet_core - [run_jet_tests] running query '⑪ 마이너스_금액_분개' (year=2024)
+2026-01-30 10:05:33,605 [INFO] jet_app.jet_core - [run_jet_tests] all queries finished (count=11)
+2026-01-30 10:05:33,614 [INFO] jet_app - [UI] Step 5 완료: result_sets=11
+2026-01-30 10:05:55,494 [INFO] jet_app - [UI] JET run finished (file=(테스트1) 2-4. 2024년 별도 분개장.csv)
+2026-01-30 10:05:55,495 [INFO] jet_app - [render_results] rendering results for years=[2023, 2024] (result_sets=11)
