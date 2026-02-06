@@ -386,6 +386,38 @@ min_amount = st.number_input(
     help="①번 테스트(휴일 분기말 지정금액 이상 분개)에서 사용할 최소 금액을 입력하세요. 기본값: 10억원",
 )
 
+# ⑥⑦⑧번 쿼리 저빈도 횟수 조건 입력
+with st.expander("📊 저빈도 항목 횟수 조건 입력 (⑥⑦⑧번 테스트)", expanded=False):
+    st.markdown("각 테스트에서 **N회 이하**로 판단할 횟수를 개별 설정합니다.")
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        min_count_account = st.number_input(
+            "⑥ 계정별 횟수",
+            min_value=1,
+            max_value=100,
+            value=3,
+            step=1,
+            help="⑥번 테스트(계정별 N회 이하)에서 사용할 횟수. 기본값: 3회",
+        )
+    with col2:
+        min_count_user = st.number_input(
+            "⑦ 사용자별 횟수",
+            min_value=1,
+            max_value=100,
+            value=3,
+            step=1,
+            help="⑦번 테스트(사용자별 N회 이하)에서 사용할 횟수. 기본값: 3회",
+        )
+    with col3:
+        min_count_customer = st.number_input(
+            "⑧ 거래처별 횟수",
+            min_value=1,
+            max_value=100,
+            value=3,
+            step=1,
+            help="⑧번 테스트(거래처별 N회 이하)에서 사용할 횟수. 기본값: 3회",
+        )
+
 # 대표이사 / 주요 인물 정보 입력 (동적 + 버튼)
 if "person_rows" not in st.session_state:
     st.session_state.person_rows = 1
@@ -575,10 +607,13 @@ if run_button:
                     "디버깅용 로그를 생성하는 중입니다...",
                 )
                 logger.info(
-                    "[UI] Step 5: run_jet_tests 시작 (years=%s, person_names=%s, min_amount=%.0f)",
+                    "[UI] Step 5: run_jet_tests 시작 (years=%s, person_names=%s, min_amount=%.0f, min_count_account=%d, min_count_user=%d, min_count_customer=%d)",
                     detected_years,
                     person_names,
                     min_amount,
+                    min_count_account,
+                    min_count_user,
+                    min_count_customer,
                 )
                 results, queries, debug_info = run_jet_tests(
                     conn,
@@ -586,6 +621,9 @@ if run_button:
                     person_names or None,
                     person_dobs or None,
                     min_amount=min_amount,
+                    min_count_account=min_count_account,
+                    min_count_user=min_count_user,
+                    min_count_customer=min_count_customer,
                 )
                 logger.info(
                     "[UI] Step 5 완료: result_sets=%d",

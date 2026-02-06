@@ -266,13 +266,19 @@ def get_jet_queries(
     holiday_table: str,
     person_names: Optional[List[str]] = None,
     min_amount: float = 1000000000.0,
+    min_count_account: int = 3,
+    min_count_user: int = 3,
+    min_count_customer: int = 3,
 ) -> Dict[str, str]:
     logger.info(
-        "[get_jet_queries] preparing queries for year=%d, holiday_table=%s, person_names=%s, min_amount=%.0f",
+        "[get_jet_queries] preparing queries for year=%d, holiday_table=%s, person_names=%s, min_amount=%.0f, min_count_account=%d, min_count_user=%d, min_count_customer=%d",
         year,
         holiday_table,
         person_names,
         min_amount,
+        min_count_account,
+        min_count_user,
+        min_count_customer,
     )
 
     queries: Dict[str, str] = {}
@@ -356,13 +362,13 @@ def get_jet_queries(
         ORDER BY 회계연도, start_missing
     """
 
-    # ⑥ 특정 계정이 3회 이하
-    queries["⑥ 계정별_3회이하"] = f"""
+    # ⑥ 특정 계정이 N회 이하
+    queries["⑥ 계정별_N회이하"] = f"""
         WITH low_count_accounts AS (
             SELECT 회계연도, 계정명
             FROM {TABLE_NAME}
             GROUP BY 계정명, 회계연도
-            HAVING COUNT(*) < 4
+            HAVING COUNT(*) <= {min_count_account}
         )
         SELECT j.*
         FROM {TABLE_NAME} j
@@ -372,13 +378,13 @@ def get_jet_queries(
         ORDER BY j.회계연도, j.계정명, j.전표번호, j.전표라인번호
     """
 
-    # ⑦ 사용자별 3회 이하
-    queries["⑦ 사용자별_3회이하"] = f"""
+    # ⑦ 사용자별 N회 이하
+    queries["⑦ 사용자별_N회이하"] = f"""
         WITH low_count_users AS (
             SELECT 회계연도, 사용자명
             FROM {TABLE_NAME}
             GROUP BY 사용자명, 회계연도
-            HAVING COUNT(*) < 4
+            HAVING COUNT(*) <= {min_count_user}
         )
         SELECT j.*
         FROM {TABLE_NAME} j
@@ -389,13 +395,13 @@ def get_jet_queries(
     """
 
 
-    # ⑧ 거래처가 3회 이하
-    queries["⑧ 거래처별_3회이하"] = f"""
+    # ⑧ 거래처가 N회 이하
+    queries["⑧ 거래처별_N회이하"] = f"""
         WITH low_count_customers AS (
             SELECT 회계연도, 거래처명
             FROM {TABLE_NAME}
             GROUP BY 거래처명, 회계연도
-            HAVING COUNT(*) < 4
+            HAVING COUNT(*) <= {min_count_customer}
         )
         SELECT j.*
         FROM {TABLE_NAME} j
@@ -470,18 +476,27 @@ def run_jet_tests(
     person_names: Optional[List[str]] = None,
     person_birthdates: Optional[List[str]] = None,
     min_amount: float = 1000000000.0,
+    min_count_account: int = 3,
+    min_count_user: int = 3,
+    min_count_customer: int = 3,
 ) -> Tuple[Dict[str, pd.DataFrame], Dict[str, str], Dict[str, pd.DataFrame]]:
     """
     여러 연도에 대해 휴일 테이블을 생성 후 ①~⑪ 쿼리를 실행한다.
     연도별 결과를 하나로 모아(qid 단위) 반환한다.
     min_amount: ①번 쿼리에서 사용할 최소 금액 (기본값: 10억원)
+    min_count_account: ⑥번 쿼리에서 사용할 계정별 최소 횟수 (기본값: 3회)
+    min_count_user: ⑦번 쿼리에서 사용할 사용자별 최소 횟수 (기본값: 3회)
+    min_count_customer: ⑧번 쿼리에서 사용할 거래처별 최소 횟수 (기본값: 3회)
     """
     logger.info(
-        "[run_jet_tests] start (years=%s, person_names=%s, person_birthdates=%s, min_amount=%.0f)",
+        "[run_jet_tests] start (years=%s, person_names=%s, person_birthdates=%s, min_amount=%.0f, min_count_account=%d, min_count_user=%d, min_count_customer=%d)",
         years,
         person_names,
         person_birthdates,
         min_amount,
+        min_count_account,
+        min_count_user,
+        min_count_customer,
     )
 
     if not years:
@@ -548,7 +563,7 @@ def run_jet_tests(
         )
 
         # 연도별 JET 쿼리 실행
-        year_queries = get_jet_queries(year, holiday_table, person_names=person_names, min_amount=min_amount)
+        year_queries = get_jet_queries(year, holiday_table, person_names=person_names, min_amount=min_amount, min_count_account=min_count_account, min_count_user=min_count_user, min_count_customer=min_count_customer)
         for qid, sql in year_queries.items():
             logger.info("[run_jet_tests] running query '%s' (year=%d)", qid, year)
             df = pd.read_sql_query(sql, conn)

@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(.venv/Scripts/python:*)",
+      "Bash(.venv/Scripts/pip:*)",
+      "Bash(.venv/Scripts/pip install:*)",
+      "Bash(curl:*)",
+      "Bash(timeout 8 .venv/Scripts/streamlit run:*)",
+      "Bash(./streamlit_app.exe:*)",
+      "Bash(.venvScriptspython -m PyInstaller --noconfirm --collect-all streamlit --add-data \".streamlit;.streamlit\" streamlit_app.py)",
+      "Bash(./JET_App.exe)",
+      "Bash(./JET.exe:*)",
+      "Bash(C:UsersFADownloadsjet_projectjet_project.venvScriptspyinstaller.exe C:UsersFADownloadsjet_projectjet_projectJET.spec --clean)",
+      "Bash(.venv/Scripts/pyinstaller.exe:*)",
+      "Bash(.venv/Scripts/pip.exe:*)",
+      "Bash(.venv/Scripts/pip.exe install:*)"
+    ]
+  }
+}
