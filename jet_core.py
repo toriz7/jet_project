@@ -302,15 +302,25 @@ def get_jet_queries(
     # ② 적요 '조정' 포함
     queries["② 적요_조정_포함"] = f"""
         SELECT * FROM {TABLE_NAME}
-        WHERE 라인적요 LIKE '%조정%'
+        WHERE (라인적요 LIKE '%조정%'
+            OR 라인적요 LIKE '%수정%'
+            OR 라인적요 LIKE '%오류%'
+            OR 라인적요 LIKE '%취소%'
+            OR 라인적요 LIKE '%대체%'
+            OR 라인적요 LIKE '%정정%')
     """
 
     # ③ 분기말(2주 전~분기 후 2주) 적요 '수정' 포함
     quarter_period = build_quarter_last_two_weeks_condition(year, field="전기일")
     queries["③ 분기말_수정_적요"] = f"""
-        SELECT *
+       SELECT *
         FROM {TABLE_NAME}
-        WHERE 라인적요 LIKE '%수정%'
+        WHERE (라인적요 LIKE '%조정%'
+            OR 라인적요 LIKE '%수정%'
+            OR 라인적요 LIKE '%오류%'
+            OR 라인적요 LIKE '%취소%'
+            OR 라인적요 LIKE '%대체%'
+            OR 라인적요 LIKE '%정정%')
           AND ({quarter_period})
         ORDER BY 전기일, 전표번호, 전표라인번호
     """

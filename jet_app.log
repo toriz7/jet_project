@@ -1757,3 +1757,7 @@ UnicodeDecodeError: 'utf-8' codec can't decode byte 0x9b in position 0: invalid 
 2026-02-05 09:42:12,391 [INFO] jet_app - [UI] ④번 전표번호별 상세 데이터 준비 완료: 2개
 2026-02-05 09:42:12,668 [INFO] jet_app - [UI] JET run finished (file=(테스트2) 2-4. 2024년 별도 분개장.csv)
 2026-02-05 09:42:12,671 [INFO] jet_app - [render_results] rendering results for years=[2024] (result_sets=11)
+2026-02-09 10:06:26,550 [INFO] jet_app - === JET Streamlit app logging initialized ===
+2026-02-09 10:06:26,550 [INFO] jet_app - Log file: C:\Users\FA\Desktop\jet_project\jet_project\jet_app.log
+2026-02-09 10:42:49,731 [INFO] jet_app - === JET Streamlit app logging initialized ===
+2026-02-09 10:42:49,731 [INFO] jet_app - Log file: C:\Users\FA\Desktop\jet_project\jet_project\jet_app.log
