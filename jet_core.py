@@ -30,9 +30,9 @@ REQUIRED_COLUMNS = [
     "계정코드",
     "계정명",
     "차대변지시자",
-    "현지통화금액",
-    "라인적요",
-    "거래처",
+    "금액",
+    "적요",
+    "거래처코드",
     "거래처명",
     "사용자명",
 ]
@@ -87,14 +87,14 @@ def load_csv_to_sqlite(
         )
 
     # 금액 정규화
-    if "현지통화금액" in df.columns:
-        df["현지통화금액"] = (
-            df["현지통화금액"]
+    if "금액" in df.columns:
+        df["금액"] = (
+            df["금액"]
             .astype(str)
             .str.replace(",", "")
             .str.replace(" ", "")
         )
-        df["현지통화금액"] = pd.to_numeric(df["현지통화금액"], errors="coerce")
+        df["금액"] = pd.to_numeric(df["금액"], errors="coerce")
 
     # CSV 요약
     summary = summarize_csv(df)
@@ -295,19 +295,19 @@ def get_jet_queries(
             SELECT dt FROM {holiday_table}
             WHERE {quarter_last_two_weeks}
         )
-        AND ABS(현지통화금액) >= {min_amount}
+        AND ABS(금액) >= {min_amount}
         ORDER BY 전표번호, 전표라인번호
     """
 
     # ② 적요 '조정' 포함
     queries["② 적요_조정_포함"] = f"""
         SELECT * FROM {TABLE_NAME}
-        WHERE (라인적요 LIKE '%조정%'
-            OR 라인적요 LIKE '%수정%'
-            OR 라인적요 LIKE '%오류%'
-            OR 라인적요 LIKE '%취소%'
-            OR 라인적요 LIKE '%대체%'
-            OR 라인적요 LIKE '%정정%')
+        WHERE (적요 LIKE '%조정%'
+            OR 적요 LIKE '%수정%'
+            OR 적요 LIKE '%오류%'
+            OR 적요 LIKE '%취소%'
+            OR 적요 LIKE '%대체%'
+            OR 적요 LIKE '%정정%')
     """
 
     # ③ 분기말(2주 전~분기 후 2주) 적요 '수정' 포함
@@ -315,12 +315,12 @@ def get_jet_queries(
     queries["③ 분기말_수정_적요"] = f"""
        SELECT *
         FROM {TABLE_NAME}
-        WHERE (라인적요 LIKE '%조정%'
-            OR 라인적요 LIKE '%수정%'
-            OR 라인적요 LIKE '%오류%'
-            OR 라인적요 LIKE '%취소%'
-            OR 라인적요 LIKE '%대체%'
-            OR 라인적요 LIKE '%정정%')
+        WHERE (적요 LIKE '%조정%'
+            OR 적요 LIKE '%수정%'
+            OR 적요 LIKE '%오류%'
+            OR 적요 LIKE '%취소%'
+            OR 적요 LIKE '%대체%'
+            OR 적요 LIKE '%정정%')
           AND ({quarter_period})
         ORDER BY 전기일, 전표번호, 전표라인번호
     """
@@ -329,9 +329,9 @@ def get_jet_queries(
     queries["④ 대차불일치_전표세트"] = f"""
         SELECT 
             전표번호,
-            SUM(현지통화금액) AS 전표별_합계,
-            SUM(CASE WHEN 차대변지시자 = 'D' THEN 현지통화금액 ELSE 0 END) AS 차변합,
-            SUM(CASE WHEN 차대변지시자 = 'C' THEN 현지통화금액 ELSE 0 END) AS 대변합,
+            SUM(금액) AS 전표별_합계,
+            SUM(CASE WHEN 차대변지시자 = 'D' THEN 금액 ELSE 0 END) AS 차변합,
+            SUM(CASE WHEN 차대변지시자 = 'C' THEN 금액 ELSE 0 END) AS 대변합,
             COUNT(*) AS 전표라인수
         FROM {TABLE_NAME}
         GROUP BY 전표번호
@@ -424,9 +424,9 @@ def get_jet_queries(
     # ⑨ 금액의 천원단위가 0000 (10,000원 단위 배수)
     queries["⑨ 금액_만원단위_0000"] = f"""
         SELECT * FROM {TABLE_NAME}
-        WHERE 현지통화금액 IS NOT NULL
-          AND 현지통화금액 != 0
-          AND 현지통화금액 % 10000 = 0
+        WHERE 금액 IS NOT NULL
+          AND 금액 != 0
+          AND 금액 % 10000 = 0
     """
 
     # ⑩ 주요 인물 이름이 거래처명에 포함되는 분개
@@ -467,7 +467,7 @@ def get_jet_queries(
     queries["⑪ 마이너스_금액_분개"] = f"""
         SELECT *
         FROM {TABLE_NAME}
-        WHERE 현지통화금액 < 0
+        WHERE 금액 < 0
         ORDER BY 전표번호, 전표라인번호
     """
 
